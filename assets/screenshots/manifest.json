@@ -1,0 +1,121 @@
+[
+  {
+    "label": "home",
+    "path": "/",
+    "url": "https://fumex-6666.myshopify.com/?_ab=0&_fd=0&_sc=1&preview_theme_id=176301146359",
+    "title": "Fumex",
+    "file": "assets/screenshots/home.png"
+  },
+  {
+    "label": "product-detail",
+    "path": "/products/fumex-desktop-dt-model",
+    "url": "https://fumex-6666.myshopify.com/products/fumex-desktop-dt-model?_ab=0&_fd=0&_sc=1&preview_theme_id=176301146359",
+    "title": "Fumex Desktop (DT) Model",
+    "file": "assets/screenshots/product-detail.png"
+  },
+  {
+    "label": "collection-products",
+    "path": "/collections/all-products",
+    "url": "https://fumex-6666.myshopify.com/collections/all-products?_ab=0&_fd=0&_sc=1&preview_theme_id=176301146359",
+    "title": "All Products",
+    "file": "assets/screenshots/collection-products.png"
+  },
+  {
+    "label": "collection-filters",
+    "path": "/collections/filters",
+    "url": "https://fumex-6666.myshopify.com/collections/filters?_ab=0&_fd=0&_sc=1&preview_theme_id=176301146359",
+    "title": "Filters",
+    "file": "assets/screenshots/collection-filters.png"
+  },
+  {
+    "label": "collection-accessories",
+    "path": "/collections/accessories",
+    "url": "https://fumex-6666.myshopify.com/collections/accessories?_ab=0&_fd=0&_sc=1&preview_theme_id=176301146359",
+    "title": "Accessories",
+    "file": "assets/screenshots/collection-accessories.png"
+  },
+  {
+    "label": "page-about",
+    "path": "/pages/about",
+    "url": "https://fumex-6666.myshopify.com/pages/about?_ab=0&_fd=0&_sc=1&preview_theme_id=176301146359",
+    "title": "About",
+    "file": "assets/screenshots/page-about.png"
+  },
+  {
+    "label": "page-applications",
+    "path": "/pages/applications-landing",
+    "url": "https://fumex-6666.myshopify.com/pages/applications-landing?_ab=0&_fd=0&_sc=1&preview_theme_id=176301146359",
+    "title": "Applications Landing",
+    "file": "assets/screenshots/page-applications.png"
+  },
+  {
+    "label": "application-detail",
+    "path": "/pages/individual-application/laser-markers-1",
+    "url": "https://fumex-6666.myshopify.com/pages/individual-application/laser-markers-1?_ab=0&_fd=0&_sc=1&preview_theme_id=176301146359",
+    "title": "Fume Extraction for Laser Markers | Fumex Source Capture",
+    "file": "assets/screenshots/application-detail.png"
+  },
+  {
+    "label": "page-industries",
+    "path": "/pages/industries",
+    "url": "https://fumex-6666.myshopify.com/pages/industries?_ab=0&_fd=0&_sc=1&preview_theme_id=176301146359",
+    "title": "Industries",
+    "file": "assets/screenshots/page-industries.png"
+  },
+  {
+    "label": "industry-detail",
+    "path": "/pages/individual-industry/automotive",
+    "url": "https://fumex-6666.myshopify.com/pages/individual-industry/automotive?_ab=0&_fd=0&_sc=1&preview_theme_id=176301146359",
+    "title": "Automotive Fume Extraction & Source Capture Filtration | Fumex",
+    "file": "assets/screenshots/industry-detail.png"
+  },
+  {
+    "label": "page-oem",
+    "path": "/pages/oem/oem-program",
+    "url": "https://fumex-6666.myshopify.com/pages/oem/oem-program?_ab=0&_fd=0&_sc=1&preview_theme_id=176301146359",
+    "title": "OEM Program",
+    "file": "assets/screenshots/page-oem.png"
+  },
+  {
+    "label": "page-contact",
+    "path": "/pages/contact",
+    "url": "https://fumex-6666.myshopify.com/pages/contact?_ab=0&_fd=0&_sc=1&preview_theme_id=176301146359",
+    "title": "Contact",
+    "file": "assets/screenshots/page-contact.png"
+  },
+  {
+    "label": "page-help-center",
+    "path": "/pages/help-center",
+    "url": "https://fumex-6666.myshopify.com/pages/help-center?_ab=0&_fd=0&_sc=1&preview_theme_id=176301146359",
+    "title": "Help Center",
+    "file": "assets/screenshots/page-help-center.png"
+  },
+  {
+    "label": "blog-news",
+    "path": "/blogs/news",
+    "url": "https://fumex-6666.myshopify.com/blogs/news?_ab=0&_fd=0&_sc=1&preview_theme_id=176301146359",
+    "title": "Blog",
+    "file": "assets/screenshots/blog-news.png"
+  },
+  {
+    "label": "blog-press-releases",
+    "path": "/blogs/press-releases",
+    "url": "https://fumex-6666.myshopify.com/blogs/press-releases?_ab=0&_fd=0&_sc=1&preview_theme_id=176301146359",
+    "title": "Media",
+    "file": "assets/screenshots/blog-press-releases.png"
+  },
+  {
+    "label": "cart",
+    "path": "/cart",
+    "url": "https://fumex-6666.myshopify.com/cart?_ab=0&_fd=0&_sc=1&preview_theme_id=176301146359",
+    "title": "Your Shopping Cart",
+    "file": "assets/screenshots/cart.png"
+  },
+  {
+    "label": "search",
+    "path": "/search?q=filter",
+    "url": "https://fumex-6666.myshopify.com/search?q=filter&_ab=0&_fd=0&_sc=1&preview_theme_id=176301146359",
+    "title": "Search: 73 results found for \"filter\"",
+    "file": "assets/screenshots/search.png"
+  }
+]
