@@ -253,15 +253,33 @@
       <tr><td><code>About</code></td><td>The About dropdown (Company, Media, Privacy Policy)</td></tr>
       <tr><td><code>Promo Products / Promo Solutions / …</code></td><td>The small promo links inside each mega-menu</td></tr>
     </table>
-    <div class="box edit"><div class="t">✏️ To change menu links</div><p><strong>Content → Menus</strong> → open the relevant menu above → add/remove/reorder links. The mega-menu <em>headings</em>, promo images and the Request Quote button live in the header settings of the <strong>Theme Editor</strong>.</p></div>
+    <h4>📋 Header settings (Theme Editor)</h4>
+    <table class="tbl">
+      <tr><th>Setting</th><th>Controls</th></tr>
+      <tr><td><strong>Logo</strong> (+ logo width, second logo)</td><td>The logo image and its size; the second logo is the version shown over transparent/dark headers</td></tr>
+      <tr><td><strong>Main menu</strong></td><td>Which menu fills the top bar (set to <em>Main menu</em>)</td></tr>
+      <tr><td><strong>Mega menu</strong> blocks</td><td>For each dropdown: the trigger item, the dropdown heading, the promo image and the sub-menu shown</td></tr>
+      <tr><td><strong>Quote button</strong> (+ text, link)</td><td>Show/hide the yellow Request Quote button and where it points</td></tr>
+      <tr><td><strong>Sticky header / Search / Social</strong></td><td>Whether the header sticks on scroll, the search icon, and social icons</td></tr>
+    </table>
+    <div class="box edit"><div class="t">✏️ To change menu links</div><p><strong>Content → Menus</strong> → open the relevant menu above → add/remove/reorder links. The mega-menu <em>headings</em>, promo images and the Request Quote button live in the header settings of the <strong>Theme Editor</strong> (click the header in the preview).</p></div>
   </section>
 
   <!-- FOOTER -->
   <section class="view" id="footer">
     <h2>Footer</h2>
     <p class="lead">The dark-blue band at the bottom of every page.</p>
-    <p>A "Have Questions? Contact Us" prompt, a newsletter sign-up, columns of links (Products, Solutions, Help Center, About, Blog), and the copyright line.</p>
-    <div class="box edit"><div class="t">✏️ How to edit it</div><p>Each column reuses a menu under <strong>Content → Menus</strong> — the same <code>Products</code>, <code>Solutions</code>, <code>Help center</code>, <code>About</code> and <code>Blog</code> menus the header uses (so editing one updates both places). The bottom strip (Search, "Your Privacy Choices") is the <code>Footer menu</code>. Headings, newsletter text and colours are in the footer settings of the <strong>Theme Editor</strong>.</p></div>
+    <p>A "Have Questions? Contact Us" prompt, a newsletter sign-up, columns of links (Products, Solutions, Help Center, About, Blog), and the copyright line. The footer is built from <strong>blocks</strong> you edit in the Theme Editor:</p>
+    <h4>📋 What controls what — footer blocks</h4>
+    <table class="tbl">
+      <tr><th>Block</th><th>Controls</th></tr>
+      <tr><td><strong>Link list</strong> (one per column)</td><td>The column heading + which menu of links it shows. Columns reuse the same <code>Products</code>, <code>Solutions</code>, <code>Help center</code>, <code>About</code>, <code>Blog</code> menus as the header — edit once, updates both.</td></tr>
+      <tr><td><strong>Newsletter</strong></td><td>The "Have Questions?" heading, the link beside it, and the sign-up description.</td></tr>
+      <tr><td><strong>Logo / info</strong></td><td>Footer logo and the tagline text beneath it (if used).</td></tr>
+      <tr><td><strong>Contacts</strong></td><td>Address, phone, email and working hours (if used).</td></tr>
+      <tr><td>Section settings</td><td>Background colour, whether payment icons / policy links / copyright year show. The bottom strip (Search, "Your Privacy Choices") is the <code>Footer menu</code>.</td></tr>
+    </table>
+    <div class="box edit"><div class="t">✏️ How to edit it</div><p><strong>Theme Editor → Customize</strong> → click the footer in the preview to edit any block above. Link text comes from <strong>Content → Menus</strong>.</p></div>
   </section>
 
   <!-- HOME -->
@@ -283,7 +301,19 @@
           <li><strong>Brand logos</strong> — customer logo carousel.</li>
           <li><strong>Quiz &amp; Expert Support</strong> — two call-to-action panels.</li>
         </ol>
-        <div class="box find"><div class="t">📍 Where to find it</div><p><strong>Theme Editor → Customize</strong>, page dropdown = <em>Home page</em>. Each block appears in the left panel — click one to edit.</p></div>
+        <h4>📋 What controls what — homepage sections</h4>
+        <table class="tbl">
+          <tr><th>Section</th><th>What you can edit</th></tr>
+          <tr><td><strong>Slideshow</strong> (hero)</td><td>Per slide: desktop &amp; mobile image, heading, text, button label + link, overlay darkness. Section: autoplay, speed, image ratio.</td></tr>
+          <tr><td><strong>Rich Text</strong></td><td>Subheading, heading, body text, button label + link + style, background &amp; text colour.</td></tr>
+          <tr><td><strong>Collections List</strong></td><td>Per card: which collection, a custom image, a title override. Section: columns, image ratio.</td></tr>
+          <tr><td><strong>Card List</strong> (Applications)</td><td>Section heading. Per card: image, optional badge, text, and the link (points to an application page).</td></tr>
+          <tr><td><strong>Image Banner</strong> (Industries)</td><td>Heading, subheading, button text + link, desktop &amp; mobile image, overlay.</td></tr>
+          <tr><td><strong>Benefits</strong> (Big Card List)</td><td>Section heading. Per card: image, heading, description, optional link, card colour.</td></tr>
+          <tr><td><strong>Brand Image</strong> (logos)</td><td>Per logo: image, width, alt text, optional click link.</td></tr>
+          <tr><td><strong>Helpcenter Split</strong> (Quiz/Support)</td><td>Per panel: style (Accent/Light), image, label, heading, description, button label + link.</td></tr>
+        </table>
+        <div class="box find"><div class="t">📍 Where to find it</div><p><strong>Theme Editor → Customize</strong>, page dropdown = <em>Home page</em>. Each section above appears in the left panel — click one to edit, drag to reorder, or use the eye icon to hide.</p></div>
         <div class="box edit"><div class="t">✏️ Common edits</div><p>Change the hero via the <em>Slideshow</em> section. Reorder by dragging in the left panel. Hide a section with the eye icon. Add one with <em>Add section</em>.</p></div>
       </div>
     </div>
@@ -302,8 +332,16 @@
           <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>/collections/filters</span></div><div class="view-img"><img src="assets/screenshots/collection-filters.jpg" alt="Filters"></div></figure>
           <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>/collections/accessories</span></div><div class="view-img"><img src="assets/screenshots/collection-accessories.jpg" alt="Accessories"></div></figure>
         </div>
-        <div class="box edit"><div class="t">✏️ To add or remove products</div><p><strong>Products</strong> to create/edit a product, then <strong>Products → Collections</strong> for which collection it shows in. Tabs are driven by product <em>tags</em> — reuse the same tag names so new products land in the right group.</p></div>
-        <div class="box find"><div class="t">📍 To change the layout</div><p><strong>Theme Editor</strong> → page dropdown → <em>Collection</em>. The grouped grid is the <em>Custom product grid</em> section.</p></div>
+        <h4>📋 How the tabbed grouping works</h4>
+        <p>The grid is split into tabs (e.g. <em>F Series Units</em>, <em>G Series Units</em>) by <strong>product tags</strong>. Each tab is a "product group" block in the <em>Custom product grid</em> section, with three key settings:</p>
+        <table class="tbl">
+          <tr><th>Tab setting</th><th>What it does</th></tr>
+          <tr><td><strong>Tab title</strong></td><td>The label on the tab</td></tr>
+          <tr><td><strong>Tag</strong></td><td>Which products fall under this tab — any product carrying this tag (e.g. <code>f-series</code>) appears here automatically</td></tr>
+          <tr><td><strong>Show filters</strong></td><td>Which filters (Tags, Applications, Size…) show for that tab</td></tr>
+        </table>
+        <div class="box edit"><div class="t">✏️ To add a product to the right tab</div><p><strong>Products</strong> → open the product → add it to the collection (<strong>Collections</strong>) <em>and</em> give it the matching <strong>tag</strong> (e.g. <code>f-series</code>, <code>g-series</code>, or a filter-set code). It then drops into the correct tab on its own — no theme editing needed.</p></div>
+        <div class="box find"><div class="t">📍 The collection hero image</div><p>The big banner at the top of a collection comes from two collection metafields — <strong>Hero image desktop</strong> and <strong>Hero image mobile</strong> — set on the collection itself (<strong>Products → Collections → open one → Metafields</strong>). If left empty it falls back to the collection's featured image. The rest of the layout is the <em>Custom product grid</em> section in the <strong>Theme Editor → Collection</strong>.</p></div>
       </div>
     </div>
   </section>
@@ -316,9 +354,28 @@
       <div class="head"><h3>Product detail</h3><span class="url">/products/…</span></div>
       <div class="pcbody">
         <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>/products/fumex-desktop-dt-model</span></div><div class="view-img"><img src="assets/screenshots/product-detail.jpg" alt="Product detail"></div></figure>
-        <p>Shows the image gallery, title, price, options, buy area, a <strong>Specifications</strong> table, a <strong>Replacement Filters</strong> section, and the Quiz/Support panels. Three layouts exist:</p>
-        <ul><li><strong>Standard product</strong> — most products.</li><li><strong>Filter product</strong> — adds a product video.</li><li><strong>Accessory product</strong> — tuned for accessories.</li></ul>
-        <div class="box edit"><div class="t">✏️ To edit a product</div><p><strong>Products</strong> → open it → edit title, description, images, price, variants. The <em>Specifications</em> &amp; <em>Replacement Filters</em> come from the product's <strong>metafields</strong> further down the same product page.</p></div>
+        <p>Shows the image gallery, title, price, options, buy area, an intro block, a <strong>Smarter Design</strong> feature block, a <strong>Replacement Filters</strong> row, a <strong>Specifications</strong> table, and the Quiz/Support panels. Three layouts exist: <strong>Standard</strong> (most products), <strong>Filter</strong> (adds video + "Why Genuine"), <strong>Accessory</strong> (simplified).</p>
+        <p>Most of the rich content on a product page is filled in via that product's <strong>metafields</strong> — extra fields shown when you scroll down a product in <strong>Products → (open a product)</strong>. Here is exactly what each one controls:</p>
+        <h4>📋 What controls what — product fields</h4>
+        <table class="tbl">
+          <tr><th>Field (under the product)</th><th>Controls on the page</th><th>Layout</th></tr>
+          <tr><td><strong>Hero Eyebrow</strong></td><td>The small line of text above the product title in the hero</td><td>Standard, Filter</td></tr>
+          <tr><td><strong>Blue Small Title</strong></td><td>The blue subtitle in the hero area</td><td>Standard, Filter</td></tr>
+          <tr><td><strong>Heading</strong> (intro)</td><td>Heading of the intro/summary block under the hero</td><td>Standard, Filter</td></tr>
+          <tr><td><strong>Body</strong> (intro)</td><td>The intro paragraph text</td><td>Standard, Filter</td></tr>
+          <tr><td><strong>Technical data sheet</strong></td><td>The "Technical data sheet" download button (paste the PDF link)</td><td>Standard, Filter</td></tr>
+          <tr><td><strong>Operations manual</strong></td><td>The "Operations manual" download button (paste the PDF link)</td><td>Standard, Filter</td></tr>
+          <tr><td><strong>Smarter Design Heading</strong></td><td>Heading of the "Smarter Design" feature block</td><td>Standard, Filter</td></tr>
+          <tr><td><strong>Smarter Design bubbles</strong></td><td>The individual callout bubbles inside that block (one per line)</td><td>Standard, Filter</td></tr>
+          <tr><td><strong>Replacement Filters</strong></td><td>The products shown in the "Replacement Filters" row</td><td>Standard</td></tr>
+          <tr><td><strong>Related Filters</strong></td><td>The products shown in the filters row</td><td>Filter</td></tr>
+          <tr><td><strong>Bottom Filter Title</strong></td><td>The heading above that filters row</td><td>Standard, Filter</td></tr>
+          <tr><td><strong>Video url</strong></td><td>The embedded product video (YouTube/Vimeo/MP4 link)</td><td>Filter</td></tr>
+          <tr><td><strong>Why Genuine title / body</strong></td><td>The "Why Genuine" section heading &amp; text</td><td>Filter</td></tr>
+        </table>
+        <div class="box note"><div class="t">💡 The Specifications table</div><p>The accordion <em>Specifications</em> comes from the product's specification metafields. The Filter layout also has a <em>What's included</em> and <em>Benefits</em> rich-text area lower on the product.</p></div>
+        <div class="box warn"><div class="t">⚠️ Fields that don't change the page</div><p>Some product fields are for internal use or filtering only and won't appear on the page: <em>Product category</em>, <em>Product weight</em>, <em>Collection title override</em>, <em>Short description internal</em>, <em>Override title grid</em>. (<em>Product Size</em> and <em>Applications</em> are used by the collection filters, not the product page.)</p></div>
+        <div class="box edit"><div class="t">✏️ To edit a product</div><p><strong>Products</strong> → open it → edit title, description, images, price, variants at the top; scroll down to the <strong>Metafields</strong> for everything in the table above.</p></div>
         <div class="box find"><div class="t">📍 To change the layout</div><p><strong>Theme Editor</strong> → <em>Products → Default product</em> (or <em>Filter</em> / <em>Accessories</em>).</p></div>
       </div>
     </div>
@@ -351,8 +408,22 @@
       <div class="head"><h3>One application (detail)</h3><span class="url">…/individual-application/…</span></div>
       <div class="pcbody">
         <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>…/laser-markers-1</span></div><div class="view-img"><img src="assets/screenshots/application-detail.jpg" alt="Application detail"></div></figure>
-        <p>Each has a hero, rich text + images, and a row of <strong>recommended products</strong>.</p>
-        <div class="box edit"><div class="t">✏️ To add or edit an application</div><p><strong>Content → Metaobjects → Individual Application Pages</strong> (14 entries). Open one to edit, or <em>Add entry</em> for a new application. To control which appear on the hub above and its title, edit the <strong>Applications Landing Page</strong> metaobject. See <strong>The content engine</strong> for the full walkthrough.</p></div>
+        <p>Each has a hero, a stack of content blocks, and a row of <strong>recommended products</strong>. Here's what each field of an <em>Individual Application Pages</em> record controls:</p>
+        <h4>📋 What controls what — application fields</h4>
+        <table class="tbl">
+          <tr><th>Field</th><th>Controls on the page</th></tr>
+          <tr><td><strong>Instance Name</strong></td><td>The label you see in the metaobject list (internal only — not shown on the page)</td></tr>
+          <tr><td><strong>Title</strong></td><td>The main page heading (H1) in the hero</td></tr>
+          <tr><td><strong>Hero Image</strong></td><td>The large banner image at the top</td></tr>
+          <tr><td><strong>Short Description</strong></td><td>The subtitle under the title</td></tr>
+          <tr><td><strong>Main Description</strong></td><td>The intro paragraph in the hero</td></tr>
+          <tr><td><strong>Rich text / Image with text Reference</strong></td><td>The stacked content blocks in the page body (see note below)</td></tr>
+          <tr><td><strong>Product Reference heading</strong></td><td>The heading above the recommended-products row</td></tr>
+          <tr><td><strong>Product Reference</strong></td><td>Which products appear in that row</td></tr>
+          <tr><td><strong>SEO Title / SEO description</strong></td><td>The title &amp; description shown in Google and the browser tab</td></tr>
+        </table>
+        <div class="box note"><div class="t">💡 The body builder (Rich text / Image with text)</div><p>This field is a <strong>stack of reusable blocks</strong>. Add a <em>Rich text</em> block (a heading + text) or an <em>Image with text</em> block (an image beside text, with a toggle for which side). Add as many as you like, in any order — they render down the page body. The blocks themselves live under <strong>Content → Metaobjects → Rich text</strong> and <strong>Image with text</strong>.</p></div>
+        <div class="box edit"><div class="t">✏️ To add or edit an application</div><p><strong>Content → Metaobjects → Individual Application Pages</strong> (14 entries). Open one to edit, or <em>Add entry</em> for a new application. To control which appear on the hub above and its title, edit the <strong>Applications Landing Page</strong> record (its <em>Applications</em> list = the cards, in order; <em>Section title</em> = the hub heading).</p></div>
       </div>
     </div>
   </section>
@@ -366,7 +437,21 @@
       <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>/pages/industries</span></div><div class="view-img"><img src="assets/screenshots/page-industries.jpg" alt="Industries hub"></div><div class="cap">Industries hub</div></figure>
       <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>…/individual-industry/automotive</span></div><div class="view-img"><img src="assets/screenshots/industry-detail.jpg" alt="Industry detail"></div><div class="cap">One industry (detail)</div></figure>
     </div>
-    <div class="box edit"><div class="t">✏️ To add or edit an industry</div><p><strong>Content → Metaobjects → Individual Industry Pages</strong> (18 entries) → add an entry and a new industry page appears. Control which show on the hub via the <strong>Industries Landing Page</strong> metaobject.</p></div>
+    <h4>📋 What controls what — industry fields</h4>
+    <table class="tbl">
+      <tr><th>Field</th><th>Controls on the page</th></tr>
+      <tr><td><strong>Instance Name</strong></td><td>Internal label in the list (not shown on the page)</td></tr>
+      <tr><td><strong>Title</strong></td><td>The main page heading in the hero banner</td></tr>
+      <tr><td><strong>Sub title</strong></td><td>The secondary heading below the title</td></tr>
+      <tr><td><strong>Hero Image</strong></td><td>The large banner background image</td></tr>
+      <tr><td><strong>Short Description</strong></td><td>The subtitle under the title (also used on the hub card)</td></tr>
+      <tr><td><strong>Main Description</strong></td><td>The intro paragraph in the hero</td></tr>
+      <tr><td><strong>Rich text / Image with text Reference</strong></td><td>The stacked content blocks in the page body (same builder as Applications)</td></tr>
+      <tr><td><strong>Product Reference heading / Product Reference</strong></td><td>The recommended-products row heading &amp; products</td></tr>
+      <tr><td><strong>Other Industries</strong></td><td>The "More Industries" cards at the bottom — pick which industries to cross-link</td></tr>
+      <tr><td><strong>SEO Title / SEO description</strong></td><td>Title &amp; description in Google and the browser tab</td></tr>
+    </table>
+    <div class="box edit"><div class="t">✏️ To add or edit an industry</div><p><strong>Content → Metaobjects → Individual Industry Pages</strong> (18 entries) → add an entry and a new industry page appears. Control which show on the hub (and its title) via the <strong>Industries Landing Page</strong> record's <em>Industries</em> list and <em>Section title</em>.</p></div>
   </section>
 
   <!-- OEM -->
@@ -377,8 +462,22 @@
       <div class="head"><h3>OEM / Integrator Program</h3><span class="url">/pages/oem/…</span></div>
       <div class="pcbody">
         <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>/pages/oem/oem-program</span></div><div class="view-img"><img src="assets/screenshots/page-oem.jpg" alt="OEM"></div></figure>
-        <p>Driven by a single metaobject record with a hero, two content sections, resource links and a list of benefit cards — all easy to manage.</p>
-        <div class="box edit"><div class="t">✏️ How to edit it</div><p><strong>Content → Metaobjects → OEM Page</strong>. Edit the hero (eyebrow, subtitle, description, background image), <em>Section 1 / Section 2</em> text &amp; image, the two resource links, and the <em>Benefits</em> list (which pulls from the <strong>Benefit Item</strong> metaobject).</p></div>
+        <p>Driven by a single <em>OEM Page</em> record. Field by field:</p>
+        <h4>📋 What controls what — OEM page fields</h4>
+        <table class="tbl">
+          <tr><th>Field</th><th>Controls on the page</th></tr>
+          <tr><td><strong>Eyebrow</strong></td><td>The small label above the hero title (e.g. "Fumex")</td></tr>
+          <tr><td><strong>Page title</strong></td><td>The big hero heading</td></tr>
+          <tr><td><strong>Hero Subtitle</strong></td><td>The subheading under the title</td></tr>
+          <tr><td><strong>Hero Description</strong></td><td>The hero body text</td></tr>
+          <tr><td><strong>Hero Background Image / …mobile</strong></td><td>The hero background (desktop &amp; a separate mobile version)</td></tr>
+          <tr><td><strong>Section 1 Title / Content</strong></td><td>The first text section heading &amp; body</td></tr>
+          <tr><td><strong>Resource 1 / 2 Label + Link</strong></td><td>Two download/resource buttons in section 1 (button text + URL)</td></tr>
+          <tr><td><strong>Section 2 Title / Content / Image</strong></td><td>The image-and-text section (heading, body, and the image beside it)</td></tr>
+          <tr><td><strong>Benefits Section Title</strong></td><td>The heading above the benefits grid</td></tr>
+          <tr><td><strong>Benefits</strong></td><td>The benefit cards — each pulls a <strong>Benefit Item</strong> (icon + title + description)</td></tr>
+        </table>
+        <div class="box edit"><div class="t">✏️ How to edit it</div><p><strong>Content → Metaobjects → OEM Page</strong> for everything above. To change a benefit card's icon or wording, edit the linked record under <strong>Content → Metaobjects → Benefit Item</strong>.</p></div>
       </div>
     </div>
   </section>
