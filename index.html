@@ -242,17 +242,26 @@
   <section class="view" id="header">
     <h2>Header &amp; navigation</h2>
     <p class="lead">The bar at the top of every page.</p>
-    <p>Fixed to the top as visitors scroll. Left to right: the <strong>Fumex logo</strong>, the <strong>main menu</strong> (Products, Solutions, Help Center, Blog, About, Contact), a <strong>search</strong> icon, a <strong>cart</strong> icon, and the yellow <strong>Request Quote</strong> button. The first four items open <strong>mega-menus</strong> — large dropdown panels with a heading and links.</p>
-    <div class="box find"><div class="t">📍 Where to find it</div><p><strong>Theme Editor → Customize</strong>, then click the header. The links come from <strong>Content → Menus</strong> (the <em>Main menu</em> and its sub-menus).</p></div>
-    <div class="box edit"><div class="t">✏️ To change menu links</div><p><strong>Content → Menus</strong> → open <em>Main menu</em> → add/remove/reorder links. Dropdown headings and the Request Quote button live in the header settings of the Theme Editor.</p></div>
+    <p>Fixed to the top as visitors scroll. Left to right: the <strong>Fumex logo</strong>, the <strong>main menu</strong> (Products, Solutions, Help Center, Blog, About, Contact), a <strong>search</strong> icon, a <strong>cart</strong> icon, and the yellow <strong>Request Quote</strong> button. <strong>Products</strong> and <strong>Solutions</strong> open <strong>mega-menus</strong> — large dropdown panels with links and a promo block.</p>
+    <p>The links all come from <strong>Content → Menus</strong>. Here's how they map:</p>
+    <table class="tbl">
+      <tr><th>Menu in admin</th><th>Controls</th></tr>
+      <tr><td><code>Main menu</code></td><td>The top-level header links</td></tr>
+      <tr><td><code>Products</code></td><td>The Products dropdown (Fume Extraction Systems, Accessories, Replacement Filters)</td></tr>
+      <tr><td><code>Solutions</code></td><td>The Solutions dropdown (Applications, Industries, OEMS)</td></tr>
+      <tr><td><code>Help center</code></td><td>The Help Center dropdown links</td></tr>
+      <tr><td><code>About</code></td><td>The About dropdown (Company, Media, Privacy Policy)</td></tr>
+      <tr><td><code>Promo Products / Promo Solutions / …</code></td><td>The small promo links inside each mega-menu</td></tr>
+    </table>
+    <div class="box edit"><div class="t">✏️ To change menu links</div><p><strong>Content → Menus</strong> → open the relevant menu above → add/remove/reorder links. The mega-menu <em>headings</em>, promo images and the Request Quote button live in the header settings of the <strong>Theme Editor</strong>.</p></div>
   </section>
 
   <!-- FOOTER -->
   <section class="view" id="footer">
     <h2>Footer</h2>
     <p class="lead">The dark-blue band at the bottom of every page.</p>
-    <p>A "Have Questions? Contact Us" prompt, a newsletter sign-up, five columns of links (Products, Solutions, Help Center, About, Blog), and the copyright line.</p>
-    <div class="box edit"><div class="t">✏️ How to edit it</div><p>Each column is a menu under <strong>Content → Menus</strong> (<em>products</em>, <em>solutions</em>, <em>help-center</em>, <em>about</em>, <em>blog</em>). Headings, newsletter text and colours are in the footer settings of the <strong>Theme Editor</strong>.</p></div>
+    <p>A "Have Questions? Contact Us" prompt, a newsletter sign-up, columns of links (Products, Solutions, Help Center, About, Blog), and the copyright line.</p>
+    <div class="box edit"><div class="t">✏️ How to edit it</div><p>Each column reuses a menu under <strong>Content → Menus</strong> — the same <code>Products</code>, <code>Solutions</code>, <code>Help center</code>, <code>About</code> and <code>Blog</code> menus the header uses (so editing one updates both places). The bottom strip (Search, "Your Privacy Choices") is the <code>Footer menu</code>. Headings, newsletter text and colours are in the footer settings of the <strong>Theme Editor</strong>.</p></div>
   </section>
 
   <!-- HOME -->
@@ -343,7 +352,7 @@
       <div class="pcbody">
         <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>…/laser-markers-1</span></div><div class="view-img"><img src="assets/screenshots/application-detail.jpg" alt="Application detail"></div></figure>
         <p>Each has a hero, rich text + images, and a row of <strong>recommended products</strong>.</p>
-        <div class="box edit"><div class="t">✏️ To add or edit an application</div><p><strong>Content → Metaobjects → Individual Application Pages</strong>. Open one to edit, or <em>Add entry</em> for a new application. See <strong>The content engine</strong> for the full walkthrough.</p></div>
+        <div class="box edit"><div class="t">✏️ To add or edit an application</div><p><strong>Content → Metaobjects → Individual Application Pages</strong> (14 entries). Open one to edit, or <em>Add entry</em> for a new application. To control which appear on the hub above and its title, edit the <strong>Applications Landing Page</strong> metaobject. See <strong>The content engine</strong> for the full walkthrough.</p></div>
       </div>
     </div>
   </section>
@@ -357,7 +366,7 @@
       <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>/pages/industries</span></div><div class="view-img"><img src="assets/screenshots/page-industries.jpg" alt="Industries hub"></div><div class="cap">Industries hub</div></figure>
       <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>…/individual-industry/automotive</span></div><div class="view-img"><img src="assets/screenshots/industry-detail.jpg" alt="Industry detail"></div><div class="cap">One industry (detail)</div></figure>
     </div>
-    <div class="box edit"><div class="t">✏️ To add or edit an industry</div><p><strong>Content → Metaobjects → Individual Industry Pages</strong> → add an entry and a new industry page appears.</p></div>
+    <div class="box edit"><div class="t">✏️ To add or edit an industry</div><p><strong>Content → Metaobjects → Individual Industry Pages</strong> (18 entries) → add an entry and a new industry page appears. Control which show on the hub via the <strong>Industries Landing Page</strong> metaobject.</p></div>
   </section>
 
   <!-- OEM -->
@@ -368,8 +377,8 @@
       <div class="head"><h3>OEM / Integrator Program</h3><span class="url">/pages/oem/…</span></div>
       <div class="pcbody">
         <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>/pages/oem/oem-program</span></div><div class="view-img"><img src="assets/screenshots/page-oem.jpg" alt="OEM"></div></figure>
-        <p>Driven by a metaobject so the content is easy to manage.</p>
-        <div class="box edit"><div class="t">✏️ How to edit it</div><p><strong>Content → Metaobjects → OEM</strong> for content; the layout sits in the Theme Editor under the OEM template.</p></div>
+        <p>Driven by a single metaobject record with a hero, two content sections, resource links and a list of benefit cards — all easy to manage.</p>
+        <div class="box edit"><div class="t">✏️ How to edit it</div><p><strong>Content → Metaobjects → OEM Page</strong>. Edit the hero (eyebrow, subtitle, description, background image), <em>Section 1 / Section 2</em> text &amp; image, the two resource links, and the <em>Benefits</em> list (which pulls from the <strong>Benefit Item</strong> metaobject).</p></div>
       </div>
     </div>
   </section>
@@ -412,7 +421,8 @@
       <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>/blogs/press-releases</span></div><div class="view-img"><img src="assets/screenshots/blog-press-releases.jpg" alt="Press"></div><div class="cap">Press releases (blue styling)</div></figure>
     </div>
     <p>Press release articles get a distinct blue header treatment to stand apart from regular news.</p>
-    <div class="box edit"><div class="t">✏️ To write a post</div><p><strong>Content → Blog posts → Add blog post</strong>. Pick the <em>News</em> or <em>Press Releases</em> blog on the right. Add a featured image and excerpt for the best look on the listing page.</p></div>
+    <div class="box note"><div class="t">💡 Two blogs, two names</div><p>In the admin the everyday blog is called <strong>Blog</strong> (web address <code>/blogs/news</code>) and the press blog is called <strong>Media</strong> (web address <code>/blogs/press-releases</code>).</p></div>
+    <div class="box edit"><div class="t">✏️ To write a post</div><p><strong>Content → Blog posts → Add blog post</strong>. Pick the <em>Blog</em> or <em>Media</em> blog from the dropdown on the right. Add a featured image and excerpt for the best look on the listing page.</p></div>
   </section>
 
   <!-- CART -->
@@ -432,7 +442,7 @@
     <h2>Special features</h2>
     <p class="lead">The interactive extras we built into your theme.</p>
     <div class="grid2">
-      <div class="feature"><h4>🧭 Product Selector Quiz</h4><p>A 4-question quiz that recommends the right product. Opens from "Take Quiz" buttons across the site; answers map to recommendations in a metaobject.</p><span class="tag">product-selector-quiz</span></div>
+      <div class="feature"><h4>🧭 Product Selector Quiz</h4><p>A guided quiz asking <em>Filtration Need → Duty Cycle → CFM known? → CFM range</em>, then recommends a product Series. Opens from "Take Quiz" buttons. Edit the logic in <strong>Content → Metaobjects → Product Recommendation</strong>.</p><span class="tag">product-selector-quiz</span></div>
       <div class="feature"><h4>🔞 Age Verification</h4><p>Optional age-gate pop-up that asks visitors to confirm their age, remembered with a cookie.</p><span class="tag">age-verification</span></div>
       <div class="feature"><h4>↔️ Before / After Slider</h4><p>A draggable image comparison for "before vs after" demonstrations.</p><span class="tag">before-after</span></div>
       <div class="feature"><h4>🔎 Predictive Search</h4><p>Live suggestions as you type, grouped into products, articles, collections and pages.</p><span class="tag">predictive-search</span></div>
@@ -446,16 +456,21 @@
   <section class="view" id="content">
     <h2>The content engine</h2>
     <p class="lead">How your Applications, Industries and OEM pages build themselves — worth understanding.</p>
-    <p>Instead of hand-building dozens of near-identical pages, we use <strong>metaobjects</strong>. Think of a metaobject as a <strong>fill-in-the-blanks form</strong>: complete the fields (title, image, description, recommended products), save, and a fully designed page appears at its own address. Edit the record and the page updates — every page stays consistent.</p>
+    <p>Instead of hand-building dozens of near-identical pages, we use <strong>metaobjects</strong>. Think of a metaobject as a <strong>fill-in-the-blanks form</strong>: complete the fields, save, and a fully designed page appears at its own address. Edit the record and the page updates — every page stays consistent. You'll find them all under <strong>Content → Metaobjects</strong>.</p>
     <table class="tbl">
-      <tr><th>Metaobject</th><th>Powers</th><th>Where to manage</th></tr>
-      <tr><td>Individual Application Pages</td><td>Every application detail page</td><td>Content → Metaobjects</td></tr>
-      <tr><td>Individual Industry Pages</td><td>Every industry detail page</td><td>Content → Metaobjects</td></tr>
-      <tr><td>OEM</td><td>The OEM programme page(s)</td><td>Content → Metaobjects</td></tr>
-      <tr><td>Product Recommendation</td><td>The answers behind the Product Selector Quiz</td><td>Content → Metaobjects</td></tr>
+      <tr><th>Metaobject (in admin)</th><th>Entries</th><th>Powers</th></tr>
+      <tr><td><strong>Individual Application Pages</strong></td><td>14</td><td>Every application detail page</td></tr>
+      <tr><td><strong>Individual Industry Pages</strong></td><td>18</td><td>Every industry detail page</td></tr>
+      <tr><td><strong>Applications Landing Page</strong></td><td>1</td><td>The Applications hub — its title &amp; which applications appear</td></tr>
+      <tr><td><strong>Industries Landing Page</strong></td><td>1</td><td>The Industries hub — its title &amp; which industries appear</td></tr>
+      <tr><td><strong>OEM Page</strong></td><td>1</td><td>The OEM programme page (hero, sections, benefits)</td></tr>
+      <tr><td><strong>Product Recommendation</strong></td><td>2</td><td>The logic behind the Product Selector Quiz</td></tr>
+      <tr><td><strong>Benefit Item</strong></td><td>7</td><td>Reusable benefit cards (icon + title + text)</td></tr>
+      <tr><td><strong>Rich text</strong> / <strong>Image with text</strong></td><td>33 / 47</td><td>Reusable content blocks dropped into the pages above</td></tr>
     </table>
-    <div class="box edit"><div class="t">✏️ Add a new application page — step by step</div><p>1. <strong>Content → Metaobjects → Individual Application Pages</strong>.<br>2. Click <strong>Add entry</strong>.<br>3. Fill in title, hero image, description, recommended products.<br>4. <strong>Save</strong> — your page is live at <code>/pages/individual-application/your-title</code>.<br>5. (Optional) Add a card linking to it on the homepage and Applications hub.</p></div>
-    <div class="box warn"><div class="t">⚠️ Keep the fields filled</div><p>The design relies on these fields — leaving an image or heading blank can leave a gap. Fill every field the existing entries use.</p></div>
+    <div class="box edit"><div class="t">✏️ Add a new application page — step by step</div><p>1. <strong>Content → Metaobjects → Individual Application Pages → Add entry</strong>.<br>2. Fill in the fields:<br>&nbsp;&nbsp;• <em>Instance Name</em> (internal label, e.g. "Laser Welding")<br>&nbsp;&nbsp;• <em>Title</em>, <em>Hero Image</em>, <em>Short Description</em>, <em>Main Description</em><br>&nbsp;&nbsp;• <em>Rich text / Image with text Reference</em> (the body blocks)<br>&nbsp;&nbsp;• <em>Product Reference heading</em> + <em>Product Reference</em> (recommended products)<br>&nbsp;&nbsp;• <em>SEO Title</em> &amp; <em>SEO description</em><br>3. <strong>Save</strong> — the page is created automatically.<br>4. To list it on the hub, open the <strong>Applications Landing Page</strong> metaobject and add your new entry to its <em>Applications</em> list.</p></div>
+    <div class="box note"><div class="t">💡 Industries work identically</div><p>Same steps under <strong>Individual Industry Pages</strong> (it adds a <em>Sub title</em> and an <em>Other Industries</em> list), then add it to the <strong>Industries Landing Page</strong> record.</p></div>
+    <div class="box warn"><div class="t">⚠️ Keep the fields filled</div><p>The design relies on these fields — leaving an image or heading blank can leave a gap. Fill every field the existing entries use, and don't change the <em>Instance Name</em> of records the menus already point to.</p></div>
   </section>
 
   <!-- RECIPES -->
@@ -469,7 +484,7 @@
       <tr><td>Add a new product</td><td>Products → Add product → add to the right Collection</td></tr>
       <tr><td>Add an application or industry page</td><td>Content → Metaobjects → pick the type → Add entry</td></tr>
       <tr><td>Change a navigation menu link</td><td>Content → Menus → open the menu → edit links</td></tr>
-      <tr><td>Write a news post or press release</td><td>Content → Blog posts → Add blog post → choose the blog</td></tr>
+      <tr><td>Write a news post or press release</td><td>Content → Blog posts → Add blog post → choose <em>Blog</em> or <em>Media</em></td></tr>
       <tr><td>Change a contact form's fields</td><td>Edit the form in HubSpot (not Shopify)</td></tr>
       <tr><td>Add / edit FAQ articles</td><td>Edit them in Gorgias</td></tr>
       <tr><td>Change brand colours or fonts</td><td>Theme Editor → Theme settings → Colors / Typography</td></tr>
@@ -484,7 +499,7 @@
     <div class="grid2">
       <div class="feature"><h4>HubSpot</h4><p>Powers the Contact page forms (Quote, General, Technical). Submissions flow into your HubSpot CRM. Edit forms in HubSpot.</p></div>
       <div class="feature"><h4>Gorgias</h4><p>Runs the Help Center knowledge base. Manage FAQ articles in Gorgias; they display on your site automatically.</p></div>
-      <div class="feature"><h4>ReCharge</h4><p>Subscription option on product pages (for recurring filter orders), if enabled.</p></div>
+      <div class="feature"><h4>ReCharge</h4><p>Subscriptions for recurring filter orders. Active — customers get a <em>Subscriptions</em> area in their account. Managed in the ReCharge app.</p></div>
       <div class="feature"><h4>Shopify</h4><p>The core platform: products, orders, customers, checkout and payments.</p></div>
     </div>
   </section>
