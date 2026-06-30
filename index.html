@@ -10,69 +10,71 @@
     --ink:#10131c; --body:#3a4150; --muted:#6b7280;
     --yellow:#f7d400; --line:#e6e8ef; --bg:#ffffff; --bg-soft:#f7f8fb;
     --radius:12px; --shadow:0 1px 3px rgba(16,19,28,.06),0 8px 24px rgba(16,19,28,.05);
-    --sidebar:300px;
+    --sidebar:288px; --topbar:60px;
     --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
     --mono:"SFMono-Regular",ui-monospace,Menlo,Consolas,monospace;
   }
   *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
   body{margin:0;font-family:var(--font);color:var(--body);background:var(--bg);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased}
-  a{color:var(--blue);text-decoration:none}
-  a:hover{text-decoration:underline}
+  a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
   h1,h2,h3,h4{color:var(--ink);line-height:1.2;font-weight:700;letter-spacing:-.02em}
 
-  /* layout */
-  .wrap{display:flex;min-height:100vh}
-  .sidebar{width:var(--sidebar);flex:0 0 var(--sidebar);position:fixed;top:0;left:0;height:100vh;overflow-y:auto;background:var(--blue-dark);color:#c8d2f5;padding:26px 20px 40px}
-  .sidebar .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:20px;letter-spacing:.04em;margin-bottom:4px}
-  .sidebar .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--yellow)}
-  .sidebar .sub{font-size:12.5px;color:#8fa1de;margin-bottom:22px;text-transform:uppercase;letter-spacing:.12em}
-  .sidebar nav a{display:block;color:#c8d2f5;font-size:14px;padding:6px 10px;border-radius:8px;margin:1px 0}
-  .sidebar nav a:hover{background:rgba(255,255,255,.07);color:#fff;text-decoration:none}
-  .sidebar nav .grp{font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:#6f82c4;margin:18px 0 4px 10px;font-weight:700}
-  .content{margin-left:var(--sidebar);flex:1;min-width:0;padding:0 0 80px}
-  .inner{max-width:920px;margin:0 auto;padding:0 36px}
+  /* sidebar */
+  .sidebar{width:var(--sidebar);position:fixed;top:0;left:0;height:100vh;overflow-y:auto;background:var(--blue-dark);color:#c8d2f5;padding:24px 18px 40px;z-index:40}
+  .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:20px;letter-spacing:.04em}
+  .brand .dot{width:10px;height:10px;border-radius:50%;background:var(--yellow)}
+  .sidebar .sub{font-size:11.5px;color:#8fa1de;margin:3px 0 20px 0;text-transform:uppercase;letter-spacing:.12em}
+  .sidebar nav button{display:flex;align-items:center;gap:9px;width:100%;text-align:left;background:none;border:0;cursor:pointer;color:#c8d2f5;font:inherit;font-size:14px;padding:7px 11px;border-radius:8px;margin:1px 0;transition:background .12s}
+  .sidebar nav button:hover{background:rgba(255,255,255,.07);color:#fff}
+  .sidebar nav button.active{background:var(--blue);color:#fff;font-weight:600}
+  .sidebar nav button .em{width:18px;text-align:center;flex:0 0 18px}
+  .grp{font-size:10.5px;text-transform:uppercase;letter-spacing:.14em;color:#6f82c4;margin:18px 0 4px 11px;font-weight:700}
 
-  /* hero */
-  .hero{background:linear-gradient(135deg,#0c1a4d 0%,#1452ff 100%);color:#fff;padding:64px 0 56px;margin-bottom:48px}
-  .hero .inner{max-width:920px}
-  .hero .kicker{text-transform:uppercase;letter-spacing:.16em;font-size:12.5px;color:#aebcf2;font-weight:700;margin-bottom:14px}
-  .hero h1{color:#fff;font-size:42px;margin:0 0 14px}
-  .hero p{font-size:18px;color:#dde4fb;max-width:680px;margin:0}
-  .hero .meta{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px}
-  .hero .meta span{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);padding:6px 13px;border-radius:99px;font-size:13px;color:#eaf0ff}
+  /* top bar */
+  .topbar{position:fixed;top:0;left:var(--sidebar);right:0;height:var(--topbar);background:rgba(255,255,255,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 32px;z-index:30}
+  .crumb{font-size:14px;color:var(--muted)}.crumb b{color:var(--ink)}
+  .nav-btns{display:flex;gap:8px}
+  .nav-btns button{border:1px solid var(--line);background:#fff;border-radius:8px;padding:7px 13px;font:inherit;font-size:13.5px;font-weight:600;color:var(--ink);cursor:pointer;display:flex;align-items:center;gap:6px}
+  .nav-btns button:hover{background:var(--bg-soft);border-color:#cfd5e6}
+  .nav-btns button:disabled{opacity:.4;cursor:default}
 
-  section{margin-bottom:54px;scroll-margin-top:24px}
-  section > h2{font-size:27px;margin:0 0 6px;padding-top:8px}
-  .lead{font-size:17px;color:var(--muted);margin:0 0 22px}
-  h3{font-size:20px;margin:30px 0 8px}
-  h4{font-size:16px;margin:20px 0 6px}
-  p{margin:0 0 14px}
-  ul,ol{margin:0 0 16px;padding-left:22px}
-  li{margin:5px 0}
-  hr{border:0;border-top:1px solid var(--line);margin:40px 0}
+  /* content */
+  .content{margin-left:var(--sidebar);padding-top:var(--topbar)}
+  .inner{max-width:880px;margin:0 auto;padding:40px 32px 64px}
+  .view{display:none;animation:fade .25s ease}
+  .view.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+  .view > h2{font-size:28px;margin:0 0 6px}
+  .lead{font-size:17px;color:var(--muted);margin:0 0 24px}
+  h3{font-size:19px;margin:28px 0 8px}
+  h4{font-size:16px;margin:18px 0 6px}
+  p{margin:0 0 14px}ul,ol{margin:0 0 16px;padding-left:22px}li{margin:5px 0}
   code{font-family:var(--mono);font-size:13.5px;background:var(--bg-soft);border:1px solid var(--line);padding:1px 6px;border-radius:6px;color:#b4256d}
 
-  /* callouts */
-  .box{border-radius:var(--radius);padding:16px 18px;margin:16px 0;font-size:15px}
-  .box p:last-child{margin-bottom:0}
-  .box .t{font-weight:700;color:var(--ink);display:flex;align-items:center;gap:8px;margin-bottom:6px}
-  .edit{background:var(--blue-soft);border:1px solid #d4ddff}
-  .edit .t{color:var(--blue-dark)}
-  .find{background:#fffdf0;border:1px solid #f3e7a8}
-  .find .t{color:#8a6d00}
-  .note{background:var(--bg-soft);border:1px solid var(--line)}
-  .warn{background:#fff5f3;border:1px solid #f6cfc6}
-  .warn .t{color:#b23b1e}
-  .ico{font-size:16px}
+  /* hero (start view only) */
+  .hero{background:linear-gradient(135deg,#0c1a4d 0%,#1452ff 100%);color:#fff;border-radius:16px;padding:36px 34px;margin-bottom:28px}
+  .hero .kicker{text-transform:uppercase;letter-spacing:.16em;font-size:12px;color:#aebcf2;font-weight:700;margin-bottom:12px}
+  .hero h1{color:#fff;font-size:34px;margin:0 0 12px}
+  .hero p{font-size:17px;color:#dde4fb;margin:0}
+  .hero .meta{margin-top:22px;display:flex;flex-wrap:wrap;gap:9px}
+  .hero .meta span{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);padding:5px 12px;border-radius:99px;font-size:12.5px;color:#eaf0ff}
 
-  /* page cards */
-  .pagecard{border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:22px 0;box-shadow:var(--shadow);background:#fff}
-  .pagecard .head{padding:16px 20px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-  .pagecard .head h3{margin:0;font-size:18px}
-  .pagecard .head .url{font-family:var(--mono);font-size:12.5px;color:var(--muted);background:var(--bg-soft);padding:4px 10px;border-radius:7px;border:1px solid var(--line)}
-  .pagecard .body{padding:18px 20px}
-  .pagecard .body > *:first-child{margin-top:0}
+  /* callouts */
+  .box{border-radius:var(--radius);padding:15px 17px;margin:16px 0;font-size:15px}
+  .box p:last-child{margin-bottom:0}
+  .box .t{font-weight:700;color:var(--ink);display:flex;align-items:center;gap:8px;margin-bottom:5px}
+  .edit{background:var(--blue-soft);border:1px solid #d4ddff}.edit .t{color:var(--blue-dark)}
+  .find{background:#fffdf0;border:1px solid #f3e7a8}.find .t{color:#8a6d00}
+  .note{background:var(--bg-soft);border:1px solid var(--line)}
+  .warn{background:#fff5f3;border:1px solid #f6cfc6}.warn .t{color:#b23b1e}
+
+  /* page card */
+  .pagecard{border:1px solid var(--line);border-radius:14px;overflow:hidden;margin:18px 0;box-shadow:var(--shadow);background:#fff}
+  .pagecard .head{padding:14px 18px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .pagecard .head h3{margin:0;font-size:17px}
+  .pagecard .head .url{font-family:var(--mono);font-size:12px;color:var(--muted);background:var(--bg-soft);padding:4px 10px;border-radius:7px;border:1px solid var(--line)}
+  .pagecard .pcbody{padding:16px 18px}.pagecard .pcbody>*:first-child{margin-top:0}
 
   /* screenshot frame */
   .shot{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--bg-soft);margin:6px 0 4px}
@@ -80,467 +82,484 @@
   .shot .bar i{width:10px;height:10px;border-radius:50%;background:#cdd2dd;display:inline-block}
   .shot .bar i:nth-child(1){background:#ff5f57}.shot .bar i:nth-child(2){background:#febc2e}.shot .bar i:nth-child(3){background:#28c840}
   .shot .bar span{margin-left:8px;font-size:12px;color:var(--muted);font-family:var(--mono)}
-  .shot .view{max-height:440px;overflow-y:auto;background:#fff}
-  .shot .view img{display:block;width:100%}
-  .shot .cap{font-size:12.5px;color:var(--muted);padding:7px 12px;border-top:1px solid var(--line);background:#fafbfd}
-  figcaption{font-size:13.5px;color:var(--muted);margin:6px 2px 0;text-align:center}
+  .shot .view-img{max-height:400px;overflow-y:auto;background:#fff}
+  .shot .view-img img{display:block;width:100%}
+  .shot .cap{font-size:12.5px;color:var(--muted);padding:7px 12px;border-top:1px solid var(--line);background:#fafbfd;text-align:center}
 
   /* tables */
   .tbl{width:100%;border-collapse:collapse;font-size:14.5px;margin:14px 0}
-  .tbl th,.tbl td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
-  .tbl th{background:var(--bg-soft);color:var(--ink);font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.04em}
-  .tbl tr:hover td{background:#fcfcfe}
-  .tbl code{font-size:12.5px}
+  .tbl th,.tbl td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  .tbl th{background:var(--bg-soft);color:var(--ink);font-weight:700;font-size:12.5px;text-transform:uppercase;letter-spacing:.04em}
+  .tbl code{font-size:12px}
 
-  .pill{display:inline-block;font-size:11.5px;font-weight:700;padding:2px 9px;border-radius:99px;text-transform:uppercase;letter-spacing:.05em}
-  .pill.custom{background:#e9f7ee;color:#1c7a44}
-  .pill.std{background:#eef2ff;color:#3a51c6}
-  .pill.meta{background:#f3e9ff;color:#7a31c6}
+  .pill{display:inline-block;font-size:11px;font-weight:700;padding:2px 9px;border-radius:99px;text-transform:uppercase;letter-spacing:.05em}
+  .pill.custom{background:#e9f7ee;color:#1c7a44}.pill.std{background:#eef2ff;color:#3a51c6}.pill.meta{background:#f3e9ff;color:#7a31c6}
 
-  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  .feature{border:1px solid var(--line);border-radius:12px;padding:16px 18px;background:#fff}
-  .feature h4{margin:0 0 4px;font-size:15.5px;color:var(--ink)}
-  .feature p{font-size:14px;margin:0;color:var(--body)}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .feature{border:1px solid var(--line);border-radius:12px;padding:15px 16px;background:#fff}
+  .feature h4{margin:0 0 4px;font-size:15px;color:var(--ink)}
+  .feature p{font-size:13.5px;margin:0;color:var(--body)}
   .feature .tag{font-size:11px;font-family:var(--mono);color:var(--muted)}
 
-  .toc-toggle{display:none}
-  footer.docfoot{border-top:1px solid var(--line);margin-top:40px;padding-top:22px;color:var(--muted);font-size:13.5px}
+  /* clickable cards on start view */
+  .jump{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:8px}
+  .jump button{text-align:left;background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px;cursor:pointer;font:inherit;transition:.12s;box-shadow:var(--shadow)}
+  .jump button:hover{border-color:var(--blue);transform:translateY(-2px)}
+  .jump .e{font-size:20px}.jump .h{font-weight:700;color:var(--ink);margin:6px 0 2px;font-size:14.5px}
+  .jump .d{font-size:12.5px;color:var(--muted)}
 
+  .endnav{display:flex;justify-content:space-between;gap:12px;margin-top:36px;border-top:1px solid var(--line);padding-top:20px}
+  .endnav button{border:1px solid var(--line);background:#fff;border-radius:10px;padding:12px 16px;font:inherit;cursor:pointer;text-align:left;max-width:48%;color:var(--ink)}
+  .endnav button:hover{border-color:var(--blue);background:var(--bg-soft)}
+  .endnav button.next{text-align:right;margin-left:auto}
+  .endnav .lbl{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+  .endnav .ttl{font-weight:600}
+  .endnav button:disabled{visibility:hidden}
+
+  .toc-toggle{display:none}
   @media(max-width:980px){
     :root{--sidebar:0px}
-    .sidebar{transform:translateX(-100%);transition:transform .25s;z-index:50;width:280px;flex-basis:280px}
+    .sidebar{transform:translateX(-100%);transition:transform .25s;width:270px}
     .sidebar.open{transform:none}
+    .topbar{left:0;padding-left:64px}
     .content{margin-left:0}
-    .toc-toggle{display:inline-flex;position:fixed;top:14px;left:14px;z-index:60;background:var(--blue-dark);color:#fff;border:0;border-radius:9px;padding:9px 13px;font-size:14px;font-weight:600;cursor:pointer;box-shadow:var(--shadow)}
-    .inner{padding:0 18px}
-    .hero h1{font-size:32px}
-    .grid2{grid-template-columns:1fr}
+    .toc-toggle{display:inline-flex;position:fixed;top:12px;left:12px;z-index:60;background:var(--blue-dark);color:#fff;border:0;border-radius:9px;padding:9px 12px;font-size:16px;cursor:pointer}
+    .inner{padding:26px 18px 60px}.hero h1{font-size:27px}.grid2,.jump{grid-template-columns:1fr}
   }
 </style>
 </head>
 <body>
-<button class="toc-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open')">☰ Menu</button>
-<div class="wrap">
-  <aside class="sidebar">
-    <div class="brand"><span class="dot"></span>FUMEX</div>
-    <div class="sub">Website Owner's Guide</div>
-    <nav>
-      <a href="#start">Start here</a>
-      <a href="#admin">Finding your way in Shopify</a>
-      <a href="#map">Your site at a glance</a>
-      <div class="grp">Global elements</div>
-      <a href="#header">Header &amp; navigation</a>
-      <a href="#footer">Footer</a>
-      <div class="grp">The pages</div>
-      <a href="#home">Homepage</a>
-      <a href="#collections">Product collections</a>
-      <a href="#product">Product page</a>
-      <a href="#about">About</a>
-      <a href="#applications">Applications</a>
-      <a href="#industries">Industries</a>
-      <a href="#oem">OEM Program</a>
-      <a href="#contact">Contact</a>
-      <a href="#help">Help Center</a>
-      <a href="#blog">Blog &amp; Press</a>
-      <a href="#cart">Cart &amp; Search</a>
-      <div class="grp">How it works</div>
-      <a href="#features">Special features</a>
-      <a href="#content">The content engine</a>
-      <a href="#recipes">Common edits</a>
-      <a href="#integrations">Connected tools</a>
-      <a href="#design">Colours &amp; fonts</a>
-      <div class="grp">Reference</div>
-      <a href="#built">How we built it</a>
-      <a href="#support">Getting help</a>
-    </nav>
-  </aside>
+<button class="toc-toggle" onclick="document.querySelector('.sidebar').classList.toggle('open')">☰</button>
 
-  <main class="content">
-    <div class="hero">
-      <div class="inner">
-        <div class="kicker">Makro Agency · Client Documentation</div>
-        <h1>Your Fumex Website — Owner's Guide</h1>
-        <p>A plain-English guide to everything we built: every page, every feature, and exactly where to go in Shopify to change things yourself. No code required.</p>
-        <div class="meta">
-          <span>Theme: Makro Core</span>
-          <span>Platform: Shopify</span>
-          <span>Built by Makro Agency</span>
-          <span>Updated June 2026</span>
-        </div>
-      </div>
-    </div>
-    <div class="inner">
+<aside class="sidebar">
+  <div class="brand"><span class="dot"></span>FUMEX</div>
+  <div class="sub">Website Owner's Guide</div>
+  <nav id="nav">
+    <button data-v="start"><span class="em">🏠</span>Start here</button>
+    <button data-v="admin"><span class="em">🧭</span>Finding your way</button>
+    <button data-v="map"><span class="em">🗺️</span>Site at a glance</button>
+    <div class="grp">Global elements</div>
+    <button data-v="header"><span class="em">🔝</span>Header &amp; navigation</button>
+    <button data-v="footer"><span class="em">🔻</span>Footer</button>
+    <div class="grp">The pages</div>
+    <button data-v="home"><span class="em">⭐</span>Homepage</button>
+    <button data-v="collections"><span class="em">🛍️</span>Product collections</button>
+    <button data-v="product"><span class="em">📦</span>Product page</button>
+    <button data-v="about"><span class="em">🏢</span>About</button>
+    <button data-v="applications"><span class="em">🎯</span>Applications</button>
+    <button data-v="industries"><span class="em">🏭</span>Industries</button>
+    <button data-v="oem"><span class="em">🤝</span>OEM Program</button>
+    <button data-v="contact"><span class="em">✉️</span>Contact</button>
+    <button data-v="help"><span class="em">❓</span>Help Center</button>
+    <button data-v="blog"><span class="em">📰</span>Blog &amp; Press</button>
+    <button data-v="cart"><span class="em">🛒</span>Cart &amp; Search</button>
+    <div class="grp">How it works</div>
+    <button data-v="features"><span class="em">✨</span>Special features</button>
+    <button data-v="content"><span class="em">⚙️</span>The content engine</button>
+    <button data-v="recipes"><span class="em">📋</span>Common edits</button>
+    <button data-v="integrations"><span class="em">🔌</span>Connected tools</button>
+    <button data-v="design"><span class="em">🎨</span>Colours &amp; fonts</button>
+    <div class="grp">Reference</div>
+    <button data-v="built"><span class="em">🛠️</span>How we built it</button>
+    <button data-v="support"><span class="em">🆘</span>Getting help</button>
+  </nav>
+</aside>
 
-    <section id="start">
-      <h2>Start here</h2>
-      <p class="lead">How to read this guide and the one rule that keeps your site safe.</p>
-      <p>Your website runs on <strong>Shopify</strong> — the same platform that powers millions of online stores. We built you a custom theme called <strong>Makro Core</strong>, designed specifically for Fumex's products, applications and industries.</p>
-      <p>This guide walks through your site <strong>page by page</strong>. For each one you'll see:</p>
-      <ul>
-        <li><strong>What it is</strong> — what the page does and what's on it.</li>
-        <li><strong>How it's built</strong> — the building blocks ("sections") that make it up.</li>
-        <li><strong>How to edit it</strong> — the exact place in your Shopify admin to make changes.</li>
-      </ul>
-      <p>Look for these coloured boxes throughout:</p>
-      <div class="box find"><div class="t"><span class="ico">📍</span> Where to find it</div><p>Tells you the menu path in Shopify to reach the thing being described.</p></div>
-      <div class="box edit"><div class="t"><span class="ico">✏️</span> How to edit it</div><p>Step-by-step instructions for changing content yourself.</p></div>
-      <div class="box warn"><div class="t"><span class="ico">⚠️</span> Be careful</div><p>Flags things that can break the design if changed — best left to us, or done carefully.</p></div>
-      <div class="box note"><div class="t"><span class="ico">💡</span> The golden rule</div><p>Editing <strong>content</strong> (text, images, products, prices, blog posts) is always safe — go ahead. Editing <strong>code</strong> (anything under <em>Online Store → Themes → Edit code</em>) can break the design. When in doubt, change content in the visual editor, and leave code to Makro.</p></div>
-    </section>
-
-    <section id="admin">
-      <h2>Finding your way in Shopify</h2>
-      <p class="lead">The three places you'll spend all your time.</p>
-      <p>Everything you'll ever edit lives in one of three areas of your Shopify admin (<code>admin.shopify.com</code>):</p>
-      <h3>1. The Theme Editor — the look of your pages</h3>
-      <p>This is the drag-and-drop visual editor where you change what appears on each page: banners, text, images, the order of things, colours and fonts.</p>
-      <div class="box find"><div class="t"><span class="ico">📍</span> Where to find it</div><p><strong>Online Store → Themes → Customize</strong> (on the <em>Makro Core</em> theme). A live preview opens with an editing panel on the left. Use the page dropdown at the very top to switch between Homepage, Product pages, Collections, etc.</p></div>
-      <h3>2. Content areas — your products, pages, blogs and menus</h3>
-      <p>The actual "stuff" on your site — products and their prices, written pages, blog articles, navigation menus, and the special <em>Applications / Industries / OEM</em> content (called <strong>metaobjects</strong>).</p>
-      <div class="box find"><div class="t"><span class="ico">📍</span> Where to find it</div><p>The left sidebar of your admin: <strong>Products</strong>, <strong>Content → Pages</strong>, <strong>Content → Blog posts</strong>, <strong>Content → Metaobjects</strong>, and <strong>Content → Menus</strong> (for navigation).</p></div>
-      <h3>3. Theme Settings — site-wide design</h3>
-      <p>Global choices that apply everywhere: brand colours, fonts, logo, social links, the cart style, free-shipping message, and so on. Covered in <a href="#design">Colours &amp; fonts</a>.</p>
-      <div class="box edit"><div class="t"><span class="ico">✏️</span> A safe habit</div><p>The theme editor saves only when you press <strong>Save</strong> (top right). Nothing goes live until you do. To experiment safely, ask Makro to set up a <em>duplicate</em> of the theme to play in.</p></div>
-    </section>
-
-    <section id="map">
-      <h2>Your site at a glance</h2>
-      <p class="lead">Every page we built, and the type of each.</p>
-      <table class="tbl">
-        <tr><th>Page</th><th>Address</th><th>What it's for</th><th>Type</th></tr>
-        <tr><td>Homepage</td><td><code>/</code></td><td>Brand intro, featured products, applications, benefits</td><td><span class="pill std">Standard</span></td></tr>
-        <tr><td>All Products</td><td><code>/collections/all-products</code></td><td>Main air-filtration systems, grouped by series</td><td><span class="pill std">Standard</span></td></tr>
-        <tr><td>Filters</td><td><code>/collections/filters</code></td><td>Replacement filters by model</td><td><span class="pill std">Standard</span></td></tr>
-        <tr><td>Accessories</td><td><code>/collections/accessories</code></td><td>Add-on accessories</td><td><span class="pill std">Standard</span></td></tr>
-        <tr><td>Product page</td><td><code>/products/…</code></td><td>Individual product detail, specs &amp; buy</td><td><span class="pill std">Standard</span></td></tr>
-        <tr><td>About</td><td><code>/pages/about</code></td><td>Company story, stats &amp; values</td><td><span class="pill custom">Custom</span></td></tr>
-        <tr><td>Applications (hub)</td><td><code>/pages/applications-landing</code></td><td>Index of all applications you serve</td><td><span class="pill custom">Custom</span></td></tr>
-        <tr><td>Application detail</td><td><code>/pages/individual-application/…</code></td><td>One page per application (Laser Markers, Welding…)</td><td><span class="pill meta">Metaobject</span></td></tr>
-        <tr><td>Industries (hub)</td><td><code>/pages/industries</code></td><td>Index of industries you serve</td><td><span class="pill custom">Custom</span></td></tr>
-        <tr><td>Industry detail</td><td><code>/pages/individual-industry/…</code></td><td>One page per industry (Automotive, Electronics…)</td><td><span class="pill meta">Metaobject</span></td></tr>
-        <tr><td>OEM Program</td><td><code>/pages/oem/…</code></td><td>Partner / integrator programme</td><td><span class="pill meta">Metaobject</span></td></tr>
-        <tr><td>Contact</td><td><code>/pages/contact</code></td><td>Quote, general &amp; technical support forms</td><td><span class="pill custom">Custom</span></td></tr>
-        <tr><td>Help Center</td><td><code>/pages/help-center</code></td><td>Searchable FAQ knowledge base</td><td><span class="pill custom">Custom</span></td></tr>
-        <tr><td>Blog (News)</td><td><code>/blogs/news</code></td><td>News &amp; articles</td><td><span class="pill std">Standard</span></td></tr>
-        <tr><td>Press Releases</td><td><code>/blogs/press-releases</code></td><td>Press &amp; media posts (styled differently)</td><td><span class="pill custom">Custom</span></td></tr>
-        <tr><td>Cart</td><td><code>/cart</code></td><td>Shopping cart</td><td><span class="pill std">Standard</span></td></tr>
-        <tr><td>Search</td><td><code>/search</code></td><td>Site search results</td><td><span class="pill std">Standard</span></td></tr>
-      </table>
-      <p style="font-size:14px;color:var(--muted)"><span class="pill std">Standard</span> = a normal Shopify page type. <span class="pill custom">Custom</span> = a layout we designed specially for Fumex. <span class="pill meta">Metaobject</span> = a page that fills itself in automatically from a content record (see <a href="#content">The content engine</a>).</p>
-    </section>
-
-    <hr>
-
-    <section id="header">
-      <h2>Header &amp; navigation</h2>
-      <p class="lead">The bar at the top of every page.</p>
-      <p>Your header stays fixed to the top as visitors scroll. From left to right it has: the <strong>Fumex logo</strong>, the <strong>main menu</strong> (Products, Solutions, Help Center, Blog, About, Contact), a <strong>search</strong> icon, a <strong>cart</strong> icon, and the yellow <strong>Request Quote</strong> button.</p>
-      <p>The first four menu items open <strong>mega-menus</strong> — large dropdown panels with a heading and links — so visitors can jump straight to the right section.</p>
-      <div class="box find"><div class="t"><span class="ico">📍</span> Where to find it</div><p><strong>Theme Editor → Customize</strong>, then click the header at the top of the preview. The links themselves come from <strong>Content → Menus</strong> (the menu named <em>Main menu</em> and its sub-menus).</p></div>
-      <div class="box edit"><div class="t"><span class="ico">✏️</span> To change what's in the menu</div><p>Go to <strong>Content → Menus</strong>, open <em>Main menu</em>, and add/remove/reorder links. To change the dropdown <em>headings</em> or the Request Quote button, use the header settings in the Theme Editor.</p></div>
-    </section>
-
-    <section id="footer">
-      <h2>Footer</h2>
-      <p>The dark-blue band at the bottom of every page: a "Have Questions? Contact Us" prompt, a newsletter sign-up, and five columns of links (Products, Solutions, Help Center, About, Blog), plus the copyright line.</p>
-      <div class="box edit"><div class="t"><span class="ico">✏️</span> How to edit it</div><p>Each column of links is a menu under <strong>Content → Menus</strong> (<em>products</em>, <em>solutions</em>, <em>help-center</em>, <em>about</em>, <em>blog</em>). The headings, newsletter text and colours are in the footer settings of the <strong>Theme Editor</strong>.</p></div>
-    </section>
-
-    <hr>
-
-    <!-- HOMEPAGE -->
-    <section id="home">
-      <h2>Homepage</h2>
-      <p class="lead">Your shop window — the first thing most visitors see.</p>
-      <div class="pagecard">
-        <div class="head"><h3>Homepage</h3><span class="url">/</span></div>
-        <div class="body">
-          <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>fumex.com</span></div><div class="view"><img src="assets/screenshots/home.jpg" alt="Fumex homepage"></div><div class="cap">Scroll inside the frame to see the full page ↓</div></figure>
-          <p>The homepage is built from stacked <strong>sections</strong>, top to bottom:</p>
-          <ol>
-            <li><strong>Hero slideshow</strong> — the big "FA1" banner with a headline and <em>Learn More</em> button.</li>
-            <li><strong>Intro text</strong> — "Fumex designs precision air filtration systems…" with a <em>Shop Now</em> button.</li>
-            <li><strong>Featured collections</strong> — three cards: All Products, Filters, Accessories.</li>
-            <li><strong>Applications We Cover</strong> — a scrolling row of application cards (Laser Markers, Engravers, Welding…).</li>
-            <li><strong>Industries We Serve</strong> — a banner linking to the Industries page.</li>
-            <li><strong>Benefits Built for Cleaner Air</strong> — the six key product benefits.</li>
-            <li><strong>Brand logos</strong> — a carousel of recognisable customers (Pfizer, Bayer, Ford…).</li>
-            <li><strong>Quiz &amp; Expert Support</strong> — two call-to-action panels (Product Selector Quiz + Talk to an expert).</li>
-          </ol>
-          <div class="box find"><div class="t"><span class="ico">📍</span> Where to find it</div><p><strong>Theme Editor → Customize</strong>. The page dropdown at the top should read <em>Home page</em>. Each numbered block above appears in the left panel — click one to edit it.</p></div>
-          <div class="box edit"><div class="t"><span class="ico">✏️</span> Common edits</div><p>Change the hero image/text by clicking the <em>Slideshow</em> section. Reorder anything by dragging it in the left panel. Hide a section temporarily with the eye icon. Add a new block with <em>Add section</em>.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- COLLECTIONS -->
-    <section id="collections">
-      <h2>Product collections</h2>
-      <p class="lead">The pages that list your products: All Products, Filters and Accessories.</p>
-      <p>A <strong>collection</strong> is a group of products. Your main <em>All Products</em> page is special: products are organised into tabbed groups (for example <strong>F-Series</strong> and <strong>G-Series</strong> units, then replacement filter sets), so customers can find the right line quickly.</p>
-      <div class="pagecard">
-        <div class="head"><h3>All Products</h3><span class="url">/collections/all-products</span></div>
-        <div class="body">
-          <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>fumex.com/collections/all-products</span></div><div class="view"><img src="assets/screenshots/collection-products.jpg" alt="All products collection"></div></figure>
-          <div class="grid2">
-            <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>/collections/filters</span></div><div class="view"><img src="assets/screenshots/collection-filters.jpg" alt="Filters collection"></div></figure>
-            <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>/collections/accessories</span></div><div class="view"><img src="assets/screenshots/collection-accessories.jpg" alt="Accessories collection"></div></figure>
-          </div>
-          <div class="box edit"><div class="t"><span class="ico">✏️</span> To add or remove products</div><p>Go to <strong>Products</strong> in your admin to create or edit a product, then <strong>Products → Collections</strong> to control which collection it appears in. Products are sorted into the F/G tabs by their <em>tags</em> — keep using the same tag names so new products land in the right group.</p></div>
-          <div class="box find"><div class="t"><span class="ico">📍</span> To change the page layout</div><p><strong>Theme Editor</strong> → page dropdown → <em>Collection</em>. The grouped grid is a section called <em>Custom product grid</em>.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PRODUCT -->
-    <section id="product">
-      <h2>Product page</h2>
-      <p class="lead">Where a customer reads about one product and adds it to cart.</p>
-      <div class="pagecard">
-        <div class="head"><h3>Product detail</h3><span class="url">/products/…</span></div>
-        <div class="body">
-          <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>fumex.com/products/fumex-desktop-dt-model</span></div><div class="view"><img src="assets/screenshots/product-detail.jpg" alt="Product detail page"></div></figure>
-          <p>Each product page shows the image gallery, title, price, options, an <em>Add to cart</em> / buy area, plus a <strong>Specifications</strong> table, a <strong>Replacement Filters</strong> section, and the Quiz/Support panels.</p>
-          <p>There are three product layouts depending on the product type:</p>
-          <ul>
-            <li><strong>Standard product</strong> — most products.</li>
-            <li><strong>Filter product</strong> — adds a product video and filtration context.</li>
-            <li><strong>Accessory product</strong> — tuned for accessories.</li>
-          </ul>
-          <div class="box edit"><div class="t"><span class="ico">✏️</span> To edit a product's content</div><p>Go to <strong>Products</strong>, open the product, and edit its title, description, images, price and variants there. The <em>Specifications</em> and <em>Replacement Filters</em> come from the product's <strong>metafields</strong> (extra info fields) — edit those further down the same product page.</p></div>
-          <div class="box find"><div class="t"><span class="ico">📍</span> To change the layout for all products</div><p><strong>Theme Editor</strong> → page dropdown → <em>Products → Default product</em> (or <em>Filter</em> / <em>Accessories</em> for the other two layouts).</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about">
-      <h2>About</h2>
-      <div class="pagecard">
-        <div class="head"><h3>About Fumex</h3><span class="url">/pages/about</span></div>
-        <div class="body">
-          <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>fumex.com/pages/about</span></div><div class="view"><img src="assets/screenshots/page-about.jpg" alt="About page"></div></figure>
-          <p>A custom-designed story page: a hero banner, the <strong>Our Story</strong> section (Purpose / Expertise / Difference plus story blocks), and a row of <strong>stat cards</strong> (e.g. 10K+ systems, 30+ years, 50+ countries, 99.97% efficiency).</p>
-          <div class="box edit"><div class="t"><span class="ico">✏️</span> How to edit it</div><p><strong>Theme Editor</strong> → page dropdown → <em>Pages → About</em>. Click the <em>Our story</em> or <em>About card list</em> sections to change wording, images and the stat numbers.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- APPLICATIONS -->
-    <section id="applications">
-      <h2>Applications</h2>
-      <p class="lead">The pages explaining what Fumex systems are used for — laser marking, welding, 3D printing and more.</p>
-      <p>This is one of the smartest parts of your site. There's an <strong>Applications hub</strong> that lists every application, and each application has its <strong>own detail page</strong>. The detail pages are <strong>metaobject-driven</strong> — meaning you fill in a simple content record and the page builds itself. Add a new application record and a new page appears automatically, perfectly styled.</p>
-      <div class="pagecard">
-        <div class="head"><h3>Applications hub</h3><span class="url">/pages/applications-landing</span></div>
-        <div class="body">
-          <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>fumex.com/pages/applications-landing</span></div><div class="view"><img src="assets/screenshots/page-applications.jpg" alt="Applications landing page"></div></figure>
-        </div>
-      </div>
-      <div class="pagecard">
-        <div class="head"><h3>One application (detail)</h3><span class="url">/pages/individual-application/…</span></div>
-        <div class="body">
-          <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>…/individual-application/laser-markers-1</span></div><div class="view"><img src="assets/screenshots/application-detail.jpg" alt="Application detail page"></div></figure>
-          <p>Each detail page has a hero, rich text and images describing the application, and a row of <strong>recommended products</strong>.</p>
-          <div class="box edit"><div class="t"><span class="ico">✏️</span> To add or edit an application</div><p>Go to <strong>Content → Metaobjects → Individual Application Pages</strong>. Open an existing one to edit it, or click <em>Add entry</em> to create a new application — fill in the title, hero image, description and recommended products, and the page is created for you. See <a href="#content">The content engine</a> for the full walkthrough.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- INDUSTRIES -->
-    <section id="industries">
-      <h2>Industries</h2>
-      <p class="lead">Pages for each industry you serve — automotive, electronics, medical and so on.</p>
-      <p>Industries work exactly like Applications: an <strong>Industries hub</strong> lists them all, and each industry has its own <strong>metaobject-driven detail page</strong>.</p>
-      <div class="grid2">
-        <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>/pages/industries</span></div><div class="view"><img src="assets/screenshots/page-industries.jpg" alt="Industries hub"></div><div class="cap">Industries hub</div></figure>
-        <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>…/individual-industry/automotive</span></div><div class="view"><img src="assets/screenshots/industry-detail.jpg" alt="Industry detail"></div><div class="cap">One industry (detail)</div></figure>
-      </div>
-      <div class="box edit"><div class="t"><span class="ico">✏️</span> To add or edit an industry</div><p><strong>Content → Metaobjects → Individual Industry Pages</strong>. Same idea as applications — add an entry and a new industry page appears.</p></div>
-    </section>
-
-    <!-- OEM -->
-    <section id="oem">
-      <h2>OEM Program</h2>
-      <div class="pagecard">
-        <div class="head"><h3>OEM / Integrator Program</h3><span class="url">/pages/oem/…</span></div>
-        <div class="body">
-          <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>fumex.com/pages/oem/oem-program</span></div><div class="view"><img src="assets/screenshots/page-oem.jpg" alt="OEM program page"></div></figure>
-          <p>A dedicated B2B landing page for OEM partners and integrators, also driven by a metaobject so the content is easy to manage.</p>
-          <div class="box edit"><div class="t"><span class="ico">✏️</span> How to edit it</div><p><strong>Content → Metaobjects → OEM</strong> for the content; layout sits in the Theme Editor under the OEM template.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-      <h2>Contact</h2>
-      <div class="pagecard">
-        <div class="head"><h3>Contact &amp; support</h3><span class="url">/pages/contact</span></div>
-        <div class="body">
-          <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>fumex.com/pages/contact</span></div><div class="view"><img src="assets/screenshots/page-contact.jpg" alt="Contact page"></div></figure>
-          <p>Three tabs, each with its own form: <strong>Quote Request</strong>, <strong>General Contact</strong> and <strong>Technical Support</strong>. The forms are powered by <strong>HubSpot</strong>, so every submission lands directly in your HubSpot CRM.</p>
-          <div class="box note"><div class="t"><span class="ico">💡</span> Where submissions go</div><p>Form entries are <strong>not</strong> stored in Shopify — they appear in <strong>HubSpot</strong>. To change a form's fields, edit that form inside HubSpot; the website updates automatically.</p></div>
-          <div class="box edit"><div class="t"><span class="ico">✏️</span> To edit the tab text</div><p><strong>Theme Editor</strong> → page dropdown → <em>Pages → Contact</em> → the <em>Contact tabs</em> section. You can change each tab's heading and intro text here.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- HELP -->
-    <section id="help">
-      <h2>Help Center</h2>
-      <div class="pagecard">
-        <div class="head"><h3>Help Center</h3><span class="url">/pages/help-center</span></div>
-        <div class="body">
-          <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>fumex.com/pages/help-center</span></div><div class="view"><img src="assets/screenshots/page-help-center.jpg" alt="Help center page"></div></figure>
-          <p>A searchable FAQ / knowledge base, powered by <strong>Gorgias</strong>. Customers can search articles without leaving your site.</p>
-          <div class="box note"><div class="t"><span class="ico">💡</span> Where the articles live</div><p>The help articles are managed in <strong>Gorgias</strong> (your help-desk tool), not in Shopify. Add or edit FAQ articles there and they appear here automatically.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- BLOG -->
-    <section id="blog">
-      <h2>Blog &amp; Press</h2>
-      <p class="lead">Two blogs: everyday <strong>News</strong> articles and styled <strong>Press Releases</strong>.</p>
-      <div class="grid2">
-        <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>/blogs/news</span></div><div class="view"><img src="assets/screenshots/blog-news.jpg" alt="News blog"></div><div class="cap">News blog</div></figure>
-        <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>/blogs/press-releases</span></div><div class="view"><img src="assets/screenshots/blog-press-releases.jpg" alt="Press releases"></div><div class="cap">Press releases (blue styling)</div></figure>
-      </div>
-      <p>Press release articles get a distinct blue header treatment so they stand apart from regular news.</p>
-      <div class="box edit"><div class="t"><span class="ico">✏️</span> To write a post</div><p><strong>Content → Blog posts → Add blog post</strong>. Pick the <em>News</em> or <em>Press Releases</em> blog from the "Blog" dropdown on the right. Add a featured image and an excerpt for the best look on the listing page.</p></div>
-    </section>
-
-    <!-- CART / SEARCH -->
-    <section id="cart">
-      <h2>Cart &amp; Search</h2>
-      <div class="grid2">
-        <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>/cart</span></div><div class="view"><img src="assets/screenshots/cart.jpg" alt="Cart"></div><div class="cap">Cart</div></figure>
-        <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>/search?q=filter</span></div><div class="view"><img src="assets/screenshots/search.jpg" alt="Search results"></div><div class="cap">Search results</div></figure>
-      </div>
-      <p>Your cart can appear as a slide-out drawer (current setting) and shows a free-shipping progress message. Search uses Shopify's <strong>predictive search</strong> — results appear as the visitor types, split into Products, Articles, Collections and Pages.</p>
-      <div class="box find"><div class="t"><span class="ico">📍</span> Cart &amp; free-shipping settings</div><p><strong>Theme Editor → Theme settings → Cart</strong>: switch drawer/page, set the free-shipping threshold (currently $100) and the messages.</p></div>
-    </section>
-
-    <hr>
-
-    <!-- FEATURES -->
-    <section id="features">
-      <h2>Special features</h2>
-      <p class="lead">The interactive extras we built into your theme.</p>
-      <div class="grid2">
-        <div class="feature"><h4>🧭 Product Selector Quiz</h4><p>A 4-question guided quiz that recommends the right product. Opens from "Take Quiz" buttons across the site. Answers map to recommendations stored in a metaobject.</p><span class="tag">section: product-selector-quiz</span></div>
-        <div class="feature"><h4>🔞 Age Verification</h4><p>An optional age-gate pop-up that asks visitors to confirm their age before entering, remembered with a cookie.</p><span class="tag">section: age-verification</span></div>
-        <div class="feature"><h4>↔️ Before / After Slider</h4><p>A draggable image comparison for "before vs. after" demonstrations of air quality or filtration.</p><span class="tag">section: before-after</span></div>
-        <div class="feature"><h4>🔎 Predictive Search</h4><p>Live search suggestions as you type, grouped into products, articles, collections and pages.</p><span class="tag">section: predictive-search</span></div>
-        <div class="feature"><h4>⏱️ Countdown Timer</h4><p>A countdown to a set date — handy for launches or limited-time promotions.</p><span class="tag">section: countdown</span></div>
-        <div class="feature"><h4>🗂️ Tabbed Product Filtering</h4><p>The grouped product grid (F-Series / G-Series) on the collection page, driven by product tags.</p><span class="tag">section: custom-product-grid</span></div>
-      </div>
-      <div class="box edit"><div class="t"><span class="ico">✏️</span> Turning features on/off</div><p>Most of these are <em>sections</em> you add to a page in the Theme Editor (<em>Add section</em>). The quiz appears via "Take Quiz" buttons; the age gate is enabled/disabled in its section settings.</p></div>
-    </section>
-
-    <!-- CONTENT ENGINE -->
-    <section id="content">
-      <h2>The content engine</h2>
-      <p class="lead">How your Applications, Industries and OEM pages build themselves — the part worth understanding.</p>
-      <p>Rather than hand-building dozens of near-identical pages, we use <strong>metaobjects</strong>. Think of a metaobject as a <strong>fill-in-the-blanks form</strong>: you complete the fields (title, image, description, recommended products), press save, and a fully designed page appears at its own web address. Edit the record and the page updates. It keeps every application/industry page perfectly consistent.</p>
-      <table class="tbl">
-        <tr><th>Metaobject</th><th>Powers</th><th>Where to manage</th></tr>
-        <tr><td>Individual Application Pages</td><td>Every application detail page</td><td>Content → Metaobjects</td></tr>
-        <tr><td>Individual Industry Pages</td><td>Every industry detail page</td><td>Content → Metaobjects</td></tr>
-        <tr><td>OEM</td><td>The OEM programme page(s)</td><td>Content → Metaobjects</td></tr>
-        <tr><td>Product Recommendation</td><td>The answers behind the Product Selector Quiz</td><td>Content → Metaobjects</td></tr>
-      </table>
-      <div class="box edit"><div class="t"><span class="ico">✏️</span> Adding a new application page — step by step</div>
-        <p>1. Go to <strong>Content → Metaobjects → Individual Application Pages</strong>.<br>
-           2. Click <strong>Add entry</strong>.<br>
-           3. Fill in the fields (title, hero image, description, recommended products).<br>
-           4. Press <strong>Save</strong>. Your new page is live at <code>/pages/individual-application/your-title</code>.<br>
-           5. (Optional) Add a card linking to it on the homepage and the Applications hub.</p>
-      </div>
-      <div class="box warn"><div class="t"><span class="ico">⚠️</span> Keep the fields filled</div><p>Because the page design relies on these fields, leaving an image or heading blank can leave a gap on the page. Fill every field that the existing entries use.</p></div>
-    </section>
-
-    <!-- RECIPES -->
-    <section id="recipes">
-      <h2>Common edits — quick recipes</h2>
-      <p class="lead">The everyday changes, in a few clicks each.</p>
-      <table class="tbl">
-        <tr><th>I want to…</th><th>Do this</th></tr>
-        <tr><td>Change the big homepage banner</td><td>Theme Editor → Home page → <em>Slideshow</em> section → swap image &amp; text</td></tr>
-        <tr><td>Edit a product price or description</td><td>Products → open the product → edit &amp; Save</td></tr>
-        <tr><td>Add a new product</td><td>Products → Add product → then add it to the right Collection</td></tr>
-        <tr><td>Add an application or industry page</td><td>Content → Metaobjects → pick the type → Add entry</td></tr>
-        <tr><td>Change a navigation menu link</td><td>Content → Menus → open the menu → edit links</td></tr>
-        <tr><td>Write a news post or press release</td><td>Content → Blog posts → Add blog post → choose the blog</td></tr>
-        <tr><td>Change a contact form's fields</td><td>Edit the form in HubSpot (not Shopify)</td></tr>
-        <tr><td>Add / edit FAQ articles</td><td>Edit them in Gorgias</td></tr>
-        <tr><td>Change brand colours or fonts</td><td>Theme Editor → Theme settings → Colors / Typography</td></tr>
-        <tr><td>Update the free-shipping amount</td><td>Theme Editor → Theme settings → Cart</td></tr>
-      </table>
-    </section>
-
-    <!-- INTEGRATIONS -->
-    <section id="integrations">
-      <h2>Connected tools</h2>
-      <p class="lead">External services wired into your site.</p>
-      <div class="grid2">
-        <div class="feature"><h4>HubSpot</h4><p>Powers the Contact page forms (Quote, General, Technical). All submissions flow into your HubSpot CRM. Edit forms in HubSpot.</p></div>
-        <div class="feature"><h4>Gorgias</h4><p>Runs the Help Center knowledge base. Manage FAQ articles in Gorgias; they display on your site automatically.</p></div>
-        <div class="feature"><h4>ReCharge</h4><p>Subscription option shown on product pages (for recurring filter orders), if enabled.</p></div>
-        <div class="feature"><h4>Shopify</h4><p>The core platform: products, orders, customers, checkout and payments all live here.</p></div>
-      </div>
-    </section>
-
-    <!-- DESIGN -->
-    <section id="design">
-      <h2>Colours &amp; fonts</h2>
-      <p class="lead">The site-wide design settings.</p>
-      <p>Your brand styling is controlled centrally so the whole site stays consistent:</p>
-      <ul>
-        <li><strong>Fonts</strong> — Headings &amp; body in <em>DM Sans</em>; labels, buttons and menus in <em>Roboto Mono</em> (the uppercase, technical-looking text).</li>
-        <li><strong>Colours</strong> — yellow primary buttons (<code>#F7D400</code>), blue accents (<code>#2e69fd</code>), dark backgrounds, blue badges.</li>
-        <li><strong>Shape</strong> — rounded corners (10px) and fully-rounded (pill) buttons.</li>
-        <li><strong>Logo, favicon, social links, dark-mode</strong> — all set here too.</li>
-      </ul>
-      <div class="box find"><div class="t"><span class="ico">📍</span> Where to find it</div><p><strong>Theme Editor → Theme settings</strong> (the gear icon at the bottom of the left panel) → <em>Colors</em>, <em>Typography</em>, <em>Logo</em>, etc.</p></div>
-      <div class="box warn"><div class="t"><span class="ico">⚠️</span> Go gently</div><p>These settings affect <em>every</em> page at once. Change one thing at a time and preview before saving.</p></div>
-    </section>
-
-    <hr>
-
-    <!-- BUILT -->
-    <section id="built">
-      <h2>How we built it</h2>
-      <p class="lead">A short, non-technical summary of the approach — for the curious.</p>
-      <p>We built Fumex a <strong>custom Shopify theme ("Makro Core")</strong> from the ground up rather than using an off-the-shelf template. The design is assembled from reusable <strong>sections</strong> (banners, grids, sliders) so pages can be rearranged in the visual editor without touching code.</p>
-      <p>The clever part is the <strong>content architecture</strong>. Fumex has many applications, many industries and several product lines. Instead of building and maintaining each page by hand, we created <strong>metaobjects</strong> — structured content records that automatically generate consistent, on-brand pages. Add a record, get a page. This means the site scales as Fumex grows, with no developer needed for new applications or industries.</p>
-      <p>We also connected the tools your team already uses — <strong>HubSpot</strong> for leads, <strong>Gorgias</strong> for support, <strong>ReCharge</strong> for subscriptions — so everything works together, and built in conversion features like the <strong>Product Selector Quiz</strong> to guide visitors to the right system.</p>
-    </section>
-
-    <!-- SUPPORT -->
-    <section id="support">
-      <h2>Getting help</h2>
-      <p>Editing content is safe and we encourage it. For anything involving <strong>code</strong>, <strong>layout structure</strong>, new <strong>section types</strong>, or changes to the metaobject setup, get in touch and we'll handle it.</p>
-      <div class="box edit"><div class="t"><span class="ico">✉️</span> Contact Makro Agency</div><p><a href="https://makroagency.com">makroagency.com</a> — let us know the page and what you'd like changed, and we'll take it from there.</p></div>
-      <footer class="docfoot">
-        <p>Fumex Website Owner's Guide · Theme: Makro Core · Prepared by Makro Agency · June 2026.<br>
-        Screenshots are illustrative of the build at time of writing; your live site may differ as content is updated.</p>
-      </footer>
-    </section>
-
-    </div>
-  </main>
+<div class="topbar">
+  <div class="crumb">Owner's Guide <span style="color:#c7ccda">/</span> <b id="crumb-now">Start here</b></div>
+  <div class="nav-btns">
+    <button id="prev">← Prev</button>
+    <button id="next">Next →</button>
+  </div>
 </div>
+
+<main class="content"><div class="inner">
+
+  <!-- START -->
+  <section class="view" id="start">
+    <div class="hero">
+      <div class="kicker">Makro Agency · Client Documentation</div>
+      <h1>Your Fumex Website — Owner's Guide</h1>
+      <p>A plain-English guide to everything we built: every page, every feature, and exactly where to go in Shopify to change things yourself. No code required.</p>
+      <div class="meta"><span>Theme: Makro Core</span><span>Platform: Shopify</span><span>Built by Makro Agency</span><span>Updated June 2026</span></div>
+    </div>
+    <p>This guide walks through your site <strong>one topic at a time</strong> — pick anything from the menu on the left, or use <strong>Prev / Next</strong> (top right) to move through in order. For each page you'll see <strong>what it is</strong>, <strong>how it's built</strong>, and <strong>how to edit it</strong>.</p>
+    <h3>Jump to the basics</h3>
+    <div class="jump">
+      <button data-go="admin"><div class="e">🧭</div><div class="h">Finding your way</div><div class="d">The 3 places you'll edit things</div></button>
+      <button data-go="map"><div class="e">🗺️</div><div class="h">Site at a glance</div><div class="d">Every page in one table</div></button>
+      <button data-go="recipes"><div class="e">📋</div><div class="h">Common edits</div><div class="d">Quick how-to recipes</div></button>
+      <button data-go="content"><div class="e">⚙️</div><div class="h">The content engine</div><div class="d">How pages build themselves</div></button>
+      <button data-go="features"><div class="e">✨</div><div class="h">Special features</div><div class="d">Quiz, search, sliders &amp; more</div></button>
+      <button data-go="support"><div class="e">🆘</div><div class="h">Getting help</div><div class="d">When to call Makro</div></button>
+    </div>
+    <div class="box note"><div class="t">💡 The golden rule</div><p>Editing <strong>content</strong> (text, images, products, prices, blog posts) is always safe — go ahead. Editing <strong>code</strong> (<em>Online Store → Themes → Edit code</em>) can break the design. When in doubt, change content in the visual editor and leave code to Makro.</p></div>
+  </section>
+
+  <!-- ADMIN -->
+  <section class="view" id="admin">
+    <h2>Finding your way in Shopify</h2>
+    <p class="lead">The three places you'll spend all your time. Everything lives in your admin at <code>admin.shopify.com</code>.</p>
+    <h3>1. The Theme Editor — the look of your pages</h3>
+    <p>The drag-and-drop visual editor: change banners, text, images, the order of things, colours and fonts.</p>
+    <div class="box find"><div class="t">📍 Where to find it</div><p><strong>Online Store → Themes → Customize</strong> (on <em>Makro Core</em>). Use the page dropdown at the top to switch between Homepage, Product, Collection, etc.</p></div>
+    <h3>2. Content — products, pages, blogs &amp; menus</h3>
+    <p>The actual "stuff": products &amp; prices, written pages, blog articles, navigation menus, and the special Applications / Industries / OEM records (<strong>metaobjects</strong>).</p>
+    <div class="box find"><div class="t">📍 Where to find it</div><p>Left sidebar of your admin: <strong>Products</strong>, <strong>Content → Pages</strong>, <strong>Content → Blog posts</strong>, <strong>Content → Metaobjects</strong>, <strong>Content → Menus</strong>.</p></div>
+    <h3>3. Theme Settings — site-wide design</h3>
+    <p>Global choices applied everywhere: colours, fonts, logo, social links, cart style. See <strong>Colours &amp; fonts</strong>.</p>
+    <div class="box edit"><div class="t">✏️ A safe habit</div><p>The Theme Editor only goes live when you press <strong>Save</strong>. To experiment freely, ask Makro to set up a <em>duplicate</em> theme to play in.</p></div>
+  </section>
+
+  <!-- MAP -->
+  <section class="view" id="map">
+    <h2>Your site at a glance</h2>
+    <p class="lead">Every page we built, and the type of each.</p>
+    <table class="tbl">
+      <tr><th>Page</th><th>Address</th><th>What it's for</th><th>Type</th></tr>
+      <tr><td>Homepage</td><td><code>/</code></td><td>Brand intro, featured products, applications, benefits</td><td><span class="pill std">Standard</span></td></tr>
+      <tr><td>All Products</td><td><code>/collections/all-products</code></td><td>Main systems, grouped by series</td><td><span class="pill std">Standard</span></td></tr>
+      <tr><td>Filters</td><td><code>/collections/filters</code></td><td>Replacement filters by model</td><td><span class="pill std">Standard</span></td></tr>
+      <tr><td>Accessories</td><td><code>/collections/accessories</code></td><td>Add-on accessories</td><td><span class="pill std">Standard</span></td></tr>
+      <tr><td>Product page</td><td><code>/products/…</code></td><td>Product detail, specs &amp; buy</td><td><span class="pill std">Standard</span></td></tr>
+      <tr><td>About</td><td><code>/pages/about</code></td><td>Company story, stats &amp; values</td><td><span class="pill custom">Custom</span></td></tr>
+      <tr><td>Applications hub</td><td><code>/pages/applications-landing</code></td><td>Index of all applications</td><td><span class="pill custom">Custom</span></td></tr>
+      <tr><td>Application detail</td><td><code>…/individual-application/…</code></td><td>One page per application</td><td><span class="pill meta">Metaobject</span></td></tr>
+      <tr><td>Industries hub</td><td><code>/pages/industries</code></td><td>Index of industries</td><td><span class="pill custom">Custom</span></td></tr>
+      <tr><td>Industry detail</td><td><code>…/individual-industry/…</code></td><td>One page per industry</td><td><span class="pill meta">Metaobject</span></td></tr>
+      <tr><td>OEM Program</td><td><code>/pages/oem/…</code></td><td>Partner / integrator programme</td><td><span class="pill meta">Metaobject</span></td></tr>
+      <tr><td>Contact</td><td><code>/pages/contact</code></td><td>Quote, general &amp; technical forms</td><td><span class="pill custom">Custom</span></td></tr>
+      <tr><td>Help Center</td><td><code>/pages/help-center</code></td><td>Searchable FAQ knowledge base</td><td><span class="pill custom">Custom</span></td></tr>
+      <tr><td>Blog (News)</td><td><code>/blogs/news</code></td><td>News &amp; articles</td><td><span class="pill std">Standard</span></td></tr>
+      <tr><td>Press Releases</td><td><code>/blogs/press-releases</code></td><td>Press &amp; media (styled differently)</td><td><span class="pill custom">Custom</span></td></tr>
+      <tr><td>Cart</td><td><code>/cart</code></td><td>Shopping cart</td><td><span class="pill std">Standard</span></td></tr>
+      <tr><td>Search</td><td><code>/search</code></td><td>Site search results</td><td><span class="pill std">Standard</span></td></tr>
+    </table>
+    <p style="font-size:14px;color:var(--muted)"><span class="pill std">Standard</span> normal Shopify page · <span class="pill custom">Custom</span> a layout we designed for Fumex · <span class="pill meta">Metaobject</span> a page that fills itself from a content record (see <strong>The content engine</strong>).</p>
+  </section>
+
+  <!-- HEADER -->
+  <section class="view" id="header">
+    <h2>Header &amp; navigation</h2>
+    <p class="lead">The bar at the top of every page.</p>
+    <p>Fixed to the top as visitors scroll. Left to right: the <strong>Fumex logo</strong>, the <strong>main menu</strong> (Products, Solutions, Help Center, Blog, About, Contact), a <strong>search</strong> icon, a <strong>cart</strong> icon, and the yellow <strong>Request Quote</strong> button. The first four items open <strong>mega-menus</strong> — large dropdown panels with a heading and links.</p>
+    <div class="box find"><div class="t">📍 Where to find it</div><p><strong>Theme Editor → Customize</strong>, then click the header. The links come from <strong>Content → Menus</strong> (the <em>Main menu</em> and its sub-menus).</p></div>
+    <div class="box edit"><div class="t">✏️ To change menu links</div><p><strong>Content → Menus</strong> → open <em>Main menu</em> → add/remove/reorder links. Dropdown headings and the Request Quote button live in the header settings of the Theme Editor.</p></div>
+  </section>
+
+  <!-- FOOTER -->
+  <section class="view" id="footer">
+    <h2>Footer</h2>
+    <p class="lead">The dark-blue band at the bottom of every page.</p>
+    <p>A "Have Questions? Contact Us" prompt, a newsletter sign-up, five columns of links (Products, Solutions, Help Center, About, Blog), and the copyright line.</p>
+    <div class="box edit"><div class="t">✏️ How to edit it</div><p>Each column is a menu under <strong>Content → Menus</strong> (<em>products</em>, <em>solutions</em>, <em>help-center</em>, <em>about</em>, <em>blog</em>). Headings, newsletter text and colours are in the footer settings of the <strong>Theme Editor</strong>.</p></div>
+  </section>
+
+  <!-- HOME -->
+  <section class="view" id="home">
+    <h2>Homepage</h2>
+    <p class="lead">Your shop window — the first thing most visitors see.</p>
+    <div class="pagecard">
+      <div class="head"><h3>Homepage</h3><span class="url">/</span></div>
+      <div class="pcbody">
+        <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>fumex.com</span></div><div class="view-img"><img src="assets/screenshots/home.jpg" alt="Homepage"></div><div class="cap">Scroll inside the frame to see the full page ↓</div></figure>
+        <p>Built from stacked <strong>sections</strong>, top to bottom:</p>
+        <ol>
+          <li><strong>Hero slideshow</strong> — the "FA1" banner + <em>Learn More</em>.</li>
+          <li><strong>Intro text</strong> — "Fumex designs precision air filtration…" + <em>Shop Now</em>.</li>
+          <li><strong>Featured collections</strong> — All Products, Filters, Accessories.</li>
+          <li><strong>Applications We Cover</strong> — scrolling application cards.</li>
+          <li><strong>Industries We Serve</strong> — banner to the Industries page.</li>
+          <li><strong>Benefits Built for Cleaner Air</strong> — six key benefits.</li>
+          <li><strong>Brand logos</strong> — customer logo carousel.</li>
+          <li><strong>Quiz &amp; Expert Support</strong> — two call-to-action panels.</li>
+        </ol>
+        <div class="box find"><div class="t">📍 Where to find it</div><p><strong>Theme Editor → Customize</strong>, page dropdown = <em>Home page</em>. Each block appears in the left panel — click one to edit.</p></div>
+        <div class="box edit"><div class="t">✏️ Common edits</div><p>Change the hero via the <em>Slideshow</em> section. Reorder by dragging in the left panel. Hide a section with the eye icon. Add one with <em>Add section</em>.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLECTIONS -->
+  <section class="view" id="collections">
+    <h2>Product collections</h2>
+    <p class="lead">The pages that list your products: All Products, Filters and Accessories.</p>
+    <p>A <strong>collection</strong> is a group of products. The main <em>All Products</em> page organises products into tabbed groups (e.g. <strong>F-Series</strong> / <strong>G-Series</strong> units, then filter sets) so customers find the right line quickly.</p>
+    <div class="pagecard">
+      <div class="head"><h3>All Products</h3><span class="url">/collections/all-products</span></div>
+      <div class="pcbody">
+        <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>/collections/all-products</span></div><div class="view-img"><img src="assets/screenshots/collection-products.jpg" alt="All products"></div></figure>
+        <div class="grid2">
+          <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>/collections/filters</span></div><div class="view-img"><img src="assets/screenshots/collection-filters.jpg" alt="Filters"></div></figure>
+          <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>/collections/accessories</span></div><div class="view-img"><img src="assets/screenshots/collection-accessories.jpg" alt="Accessories"></div></figure>
+        </div>
+        <div class="box edit"><div class="t">✏️ To add or remove products</div><p><strong>Products</strong> to create/edit a product, then <strong>Products → Collections</strong> for which collection it shows in. Tabs are driven by product <em>tags</em> — reuse the same tag names so new products land in the right group.</p></div>
+        <div class="box find"><div class="t">📍 To change the layout</div><p><strong>Theme Editor</strong> → page dropdown → <em>Collection</em>. The grouped grid is the <em>Custom product grid</em> section.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT -->
+  <section class="view" id="product">
+    <h2>Product page</h2>
+    <p class="lead">Where a customer reads about one product and adds it to cart.</p>
+    <div class="pagecard">
+      <div class="head"><h3>Product detail</h3><span class="url">/products/…</span></div>
+      <div class="pcbody">
+        <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>/products/fumex-desktop-dt-model</span></div><div class="view-img"><img src="assets/screenshots/product-detail.jpg" alt="Product detail"></div></figure>
+        <p>Shows the image gallery, title, price, options, buy area, a <strong>Specifications</strong> table, a <strong>Replacement Filters</strong> section, and the Quiz/Support panels. Three layouts exist:</p>
+        <ul><li><strong>Standard product</strong> — most products.</li><li><strong>Filter product</strong> — adds a product video.</li><li><strong>Accessory product</strong> — tuned for accessories.</li></ul>
+        <div class="box edit"><div class="t">✏️ To edit a product</div><p><strong>Products</strong> → open it → edit title, description, images, price, variants. The <em>Specifications</em> &amp; <em>Replacement Filters</em> come from the product's <strong>metafields</strong> further down the same product page.</p></div>
+        <div class="box find"><div class="t">📍 To change the layout</div><p><strong>Theme Editor</strong> → <em>Products → Default product</em> (or <em>Filter</em> / <em>Accessories</em>).</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="view" id="about">
+    <h2>About</h2>
+    <p class="lead">The company story page.</p>
+    <div class="pagecard">
+      <div class="head"><h3>About Fumex</h3><span class="url">/pages/about</span></div>
+      <div class="pcbody">
+        <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>/pages/about</span></div><div class="view-img"><img src="assets/screenshots/page-about.jpg" alt="About"></div></figure>
+        <p>A custom story page: a hero banner, the <strong>Our Story</strong> section (Purpose / Expertise / Difference + story blocks), and a row of <strong>stat cards</strong> (10K+ systems, 30+ years, 50+ countries, 99.97% efficiency).</p>
+        <div class="box edit"><div class="t">✏️ How to edit it</div><p><strong>Theme Editor</strong> → <em>Pages → About</em>. Click the <em>Our story</em> or <em>About card list</em> sections to change wording, images and stat numbers.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLICATIONS -->
+  <section class="view" id="applications">
+    <h2>Applications</h2>
+    <p class="lead">Pages explaining what Fumex systems are used for — laser marking, welding, 3D printing and more.</p>
+    <p>An <strong>Applications hub</strong> lists every application; each application has its <strong>own detail page</strong>. Detail pages are <strong>metaobject-driven</strong> — fill in a simple record and the page builds itself, perfectly styled. Add a record → a new page appears automatically.</p>
+    <div class="pagecard">
+      <div class="head"><h3>Applications hub</h3><span class="url">/pages/applications-landing</span></div>
+      <div class="pcbody"><figure class="shot"><div class="bar"><i></i><i></i><i></i><span>/pages/applications-landing</span></div><div class="view-img"><img src="assets/screenshots/page-applications.jpg" alt="Applications hub"></div></figure></div>
+    </div>
+    <div class="pagecard">
+      <div class="head"><h3>One application (detail)</h3><span class="url">…/individual-application/…</span></div>
+      <div class="pcbody">
+        <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>…/laser-markers-1</span></div><div class="view-img"><img src="assets/screenshots/application-detail.jpg" alt="Application detail"></div></figure>
+        <p>Each has a hero, rich text + images, and a row of <strong>recommended products</strong>.</p>
+        <div class="box edit"><div class="t">✏️ To add or edit an application</div><p><strong>Content → Metaobjects → Individual Application Pages</strong>. Open one to edit, or <em>Add entry</em> for a new application. See <strong>The content engine</strong> for the full walkthrough.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INDUSTRIES -->
+  <section class="view" id="industries">
+    <h2>Industries</h2>
+    <p class="lead">Pages for each industry you serve — automotive, electronics, medical and so on.</p>
+    <p>Same pattern as Applications: an <strong>Industries hub</strong> lists them all, each industry has its own <strong>metaobject-driven detail page</strong>.</p>
+    <div class="grid2">
+      <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>/pages/industries</span></div><div class="view-img"><img src="assets/screenshots/page-industries.jpg" alt="Industries hub"></div><div class="cap">Industries hub</div></figure>
+      <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>…/individual-industry/automotive</span></div><div class="view-img"><img src="assets/screenshots/industry-detail.jpg" alt="Industry detail"></div><div class="cap">One industry (detail)</div></figure>
+    </div>
+    <div class="box edit"><div class="t">✏️ To add or edit an industry</div><p><strong>Content → Metaobjects → Individual Industry Pages</strong> → add an entry and a new industry page appears.</p></div>
+  </section>
+
+  <!-- OEM -->
+  <section class="view" id="oem">
+    <h2>OEM Program</h2>
+    <p class="lead">A dedicated B2B landing page for OEM partners and integrators.</p>
+    <div class="pagecard">
+      <div class="head"><h3>OEM / Integrator Program</h3><span class="url">/pages/oem/…</span></div>
+      <div class="pcbody">
+        <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>/pages/oem/oem-program</span></div><div class="view-img"><img src="assets/screenshots/page-oem.jpg" alt="OEM"></div></figure>
+        <p>Driven by a metaobject so the content is easy to manage.</p>
+        <div class="box edit"><div class="t">✏️ How to edit it</div><p><strong>Content → Metaobjects → OEM</strong> for content; the layout sits in the Theme Editor under the OEM template.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="view" id="contact">
+    <h2>Contact</h2>
+    <p class="lead">Three forms in one page.</p>
+    <div class="pagecard">
+      <div class="head"><h3>Contact &amp; support</h3><span class="url">/pages/contact</span></div>
+      <div class="pcbody">
+        <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>/pages/contact</span></div><div class="view-img"><img src="assets/screenshots/page-contact.jpg" alt="Contact"></div></figure>
+        <p>Three tabs, each with its own form: <strong>Quote Request</strong>, <strong>General Contact</strong>, <strong>Technical Support</strong>. Powered by <strong>HubSpot</strong> — every submission lands in your HubSpot CRM.</p>
+        <div class="box note"><div class="t">💡 Where submissions go</div><p>Entries are <strong>not</strong> stored in Shopify — they appear in <strong>HubSpot</strong>. To change a form's fields, edit it inside HubSpot; the website updates automatically.</p></div>
+        <div class="box edit"><div class="t">✏️ To edit the tab text</div><p><strong>Theme Editor</strong> → <em>Pages → Contact</em> → the <em>Contact tabs</em> section.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HELP -->
+  <section class="view" id="help">
+    <h2>Help Center</h2>
+    <p class="lead">A searchable FAQ / knowledge base.</p>
+    <div class="pagecard">
+      <div class="head"><h3>Help Center</h3><span class="url">/pages/help-center</span></div>
+      <div class="pcbody">
+        <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>/pages/help-center</span></div><div class="view-img"><img src="assets/screenshots/page-help-center.jpg" alt="Help center"></div></figure>
+        <p>Powered by <strong>Gorgias</strong>. Customers search articles without leaving your site.</p>
+        <div class="box note"><div class="t">💡 Where the articles live</div><p>Help articles are managed in <strong>Gorgias</strong>, not Shopify. Add/edit FAQ articles there and they appear here automatically.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section class="view" id="blog">
+    <h2>Blog &amp; Press</h2>
+    <p class="lead">Two blogs: everyday <strong>News</strong> and styled <strong>Press Releases</strong>.</p>
+    <div class="grid2">
+      <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>/blogs/news</span></div><div class="view-img"><img src="assets/screenshots/blog-news.jpg" alt="News"></div><div class="cap">News blog</div></figure>
+      <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>/blogs/press-releases</span></div><div class="view-img"><img src="assets/screenshots/blog-press-releases.jpg" alt="Press"></div><div class="cap">Press releases (blue styling)</div></figure>
+    </div>
+    <p>Press release articles get a distinct blue header treatment to stand apart from regular news.</p>
+    <div class="box edit"><div class="t">✏️ To write a post</div><p><strong>Content → Blog posts → Add blog post</strong>. Pick the <em>News</em> or <em>Press Releases</em> blog on the right. Add a featured image and excerpt for the best look on the listing page.</p></div>
+  </section>
+
+  <!-- CART -->
+  <section class="view" id="cart">
+    <h2>Cart &amp; Search</h2>
+    <p class="lead">Checkout's front door, and how visitors find things.</p>
+    <div class="grid2">
+      <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>/cart</span></div><div class="view-img"><img src="assets/screenshots/cart.jpg" alt="Cart"></div><div class="cap">Cart</div></figure>
+      <figure class="shot"><div class="bar"><i></i><i></i><i></i><span>/search?q=filter</span></div><div class="view-img"><img src="assets/screenshots/search.jpg" alt="Search"></div><div class="cap">Search results</div></figure>
+    </div>
+    <p>The cart appears as a slide-out drawer with a free-shipping progress message. Search uses <strong>predictive search</strong> — results appear as visitors type, split into Products, Articles, Collections and Pages.</p>
+    <div class="box find"><div class="t">📍 Cart &amp; free-shipping settings</div><p><strong>Theme Editor → Theme settings → Cart</strong>: drawer/page, free-shipping threshold (currently $100) and messages.</p></div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="view" id="features">
+    <h2>Special features</h2>
+    <p class="lead">The interactive extras we built into your theme.</p>
+    <div class="grid2">
+      <div class="feature"><h4>🧭 Product Selector Quiz</h4><p>A 4-question quiz that recommends the right product. Opens from "Take Quiz" buttons across the site; answers map to recommendations in a metaobject.</p><span class="tag">product-selector-quiz</span></div>
+      <div class="feature"><h4>🔞 Age Verification</h4><p>Optional age-gate pop-up that asks visitors to confirm their age, remembered with a cookie.</p><span class="tag">age-verification</span></div>
+      <div class="feature"><h4>↔️ Before / After Slider</h4><p>A draggable image comparison for "before vs after" demonstrations.</p><span class="tag">before-after</span></div>
+      <div class="feature"><h4>🔎 Predictive Search</h4><p>Live suggestions as you type, grouped into products, articles, collections and pages.</p><span class="tag">predictive-search</span></div>
+      <div class="feature"><h4>⏱️ Countdown Timer</h4><p>A countdown to a set date — handy for launches or limited-time promotions.</p><span class="tag">countdown</span></div>
+      <div class="feature"><h4>🗂️ Tabbed Product Filtering</h4><p>The grouped product grid (F/G-Series) on the collection page, driven by product tags.</p><span class="tag">custom-product-grid</span></div>
+    </div>
+    <div class="box edit"><div class="t">✏️ Turning features on/off</div><p>Most are <em>sections</em> you add to a page in the Theme Editor (<em>Add section</em>). The quiz appears via "Take Quiz" buttons; the age gate is toggled in its section settings.</p></div>
+  </section>
+
+  <!-- CONTENT -->
+  <section class="view" id="content">
+    <h2>The content engine</h2>
+    <p class="lead">How your Applications, Industries and OEM pages build themselves — worth understanding.</p>
+    <p>Instead of hand-building dozens of near-identical pages, we use <strong>metaobjects</strong>. Think of a metaobject as a <strong>fill-in-the-blanks form</strong>: complete the fields (title, image, description, recommended products), save, and a fully designed page appears at its own address. Edit the record and the page updates — every page stays consistent.</p>
+    <table class="tbl">
+      <tr><th>Metaobject</th><th>Powers</th><th>Where to manage</th></tr>
+      <tr><td>Individual Application Pages</td><td>Every application detail page</td><td>Content → Metaobjects</td></tr>
+      <tr><td>Individual Industry Pages</td><td>Every industry detail page</td><td>Content → Metaobjects</td></tr>
+      <tr><td>OEM</td><td>The OEM programme page(s)</td><td>Content → Metaobjects</td></tr>
+      <tr><td>Product Recommendation</td><td>The answers behind the Product Selector Quiz</td><td>Content → Metaobjects</td></tr>
+    </table>
+    <div class="box edit"><div class="t">✏️ Add a new application page — step by step</div><p>1. <strong>Content → Metaobjects → Individual Application Pages</strong>.<br>2. Click <strong>Add entry</strong>.<br>3. Fill in title, hero image, description, recommended products.<br>4. <strong>Save</strong> — your page is live at <code>/pages/individual-application/your-title</code>.<br>5. (Optional) Add a card linking to it on the homepage and Applications hub.</p></div>
+    <div class="box warn"><div class="t">⚠️ Keep the fields filled</div><p>The design relies on these fields — leaving an image or heading blank can leave a gap. Fill every field the existing entries use.</p></div>
+  </section>
+
+  <!-- RECIPES -->
+  <section class="view" id="recipes">
+    <h2>Common edits — quick recipes</h2>
+    <p class="lead">The everyday changes, in a few clicks each.</p>
+    <table class="tbl">
+      <tr><th>I want to…</th><th>Do this</th></tr>
+      <tr><td>Change the big homepage banner</td><td>Theme Editor → Home page → <em>Slideshow</em> → swap image &amp; text</td></tr>
+      <tr><td>Edit a product price or description</td><td>Products → open product → edit &amp; Save</td></tr>
+      <tr><td>Add a new product</td><td>Products → Add product → add to the right Collection</td></tr>
+      <tr><td>Add an application or industry page</td><td>Content → Metaobjects → pick the type → Add entry</td></tr>
+      <tr><td>Change a navigation menu link</td><td>Content → Menus → open the menu → edit links</td></tr>
+      <tr><td>Write a news post or press release</td><td>Content → Blog posts → Add blog post → choose the blog</td></tr>
+      <tr><td>Change a contact form's fields</td><td>Edit the form in HubSpot (not Shopify)</td></tr>
+      <tr><td>Add / edit FAQ articles</td><td>Edit them in Gorgias</td></tr>
+      <tr><td>Change brand colours or fonts</td><td>Theme Editor → Theme settings → Colors / Typography</td></tr>
+      <tr><td>Update the free-shipping amount</td><td>Theme Editor → Theme settings → Cart</td></tr>
+    </table>
+  </section>
+
+  <!-- INTEGRATIONS -->
+  <section class="view" id="integrations">
+    <h2>Connected tools</h2>
+    <p class="lead">External services wired into your site.</p>
+    <div class="grid2">
+      <div class="feature"><h4>HubSpot</h4><p>Powers the Contact page forms (Quote, General, Technical). Submissions flow into your HubSpot CRM. Edit forms in HubSpot.</p></div>
+      <div class="feature"><h4>Gorgias</h4><p>Runs the Help Center knowledge base. Manage FAQ articles in Gorgias; they display on your site automatically.</p></div>
+      <div class="feature"><h4>ReCharge</h4><p>Subscription option on product pages (for recurring filter orders), if enabled.</p></div>
+      <div class="feature"><h4>Shopify</h4><p>The core platform: products, orders, customers, checkout and payments.</p></div>
+    </div>
+  </section>
+
+  <!-- DESIGN -->
+  <section class="view" id="design">
+    <h2>Colours &amp; fonts</h2>
+    <p class="lead">The site-wide design settings.</p>
+    <p>Brand styling is controlled centrally so the whole site stays consistent:</p>
+    <ul>
+      <li><strong>Fonts</strong> — headings &amp; body in <em>DM Sans</em>; labels, buttons &amp; menus in <em>Roboto Mono</em> (the uppercase technical text).</li>
+      <li><strong>Colours</strong> — yellow primary buttons (<code>#F7D400</code>), blue accents (<code>#2e69fd</code>), dark backgrounds, blue badges.</li>
+      <li><strong>Shape</strong> — rounded corners (10px) and pill-shaped buttons.</li>
+      <li><strong>Logo, favicon, social links, dark-mode</strong> — all set here too.</li>
+    </ul>
+    <div class="box find"><div class="t">📍 Where to find it</div><p><strong>Theme Editor → Theme settings</strong> (gear icon, bottom of the left panel) → <em>Colors</em>, <em>Typography</em>, <em>Logo</em>.</p></div>
+    <div class="box warn"><div class="t">⚠️ Go gently</div><p>These affect <em>every</em> page at once. Change one thing at a time and preview before saving.</p></div>
+  </section>
+
+  <!-- BUILT -->
+  <section class="view" id="built">
+    <h2>How we built it</h2>
+    <p class="lead">A short, non-technical summary of the approach.</p>
+    <p>We built Fumex a <strong>custom Shopify theme ("Makro Core")</strong> from the ground up rather than an off-the-shelf template. Pages are assembled from reusable <strong>sections</strong> so they can be rearranged in the visual editor without touching code.</p>
+    <p>The clever part is the <strong>content architecture</strong>. Fumex has many applications, industries and product lines. Instead of building each page by hand, we created <strong>metaobjects</strong> — structured records that automatically generate consistent, on-brand pages. Add a record, get a page. The site scales as Fumex grows, with no developer needed for new applications or industries.</p>
+    <p>We also connected the tools your team already uses — <strong>HubSpot</strong> for leads, <strong>Gorgias</strong> for support, <strong>ReCharge</strong> for subscriptions — and built conversion features like the <strong>Product Selector Quiz</strong> to guide visitors to the right system.</p>
+  </section>
+
+  <!-- SUPPORT -->
+  <section class="view" id="support">
+    <h2>Getting help</h2>
+    <p class="lead">When to DIY, and when to call us.</p>
+    <p>Editing content is safe — go for it. For anything involving <strong>code</strong>, <strong>layout structure</strong>, new <strong>section types</strong>, or changes to the metaobject setup, get in touch and we'll handle it.</p>
+    <div class="box edit"><div class="t">✉️ Contact Makro Agency</div><p><a href="https://makroagency.com">makroagency.com</a> — tell us the page and what you'd like changed, and we'll take it from there.</p></div>
+    <p style="font-size:13px;color:var(--muted);margin-top:24px">Fumex Website Owner's Guide · Theme: Makro Core · Prepared by Makro Agency · June 2026. Screenshots are illustrative of the build at time of writing; your live site may differ as content is updated.</p>
+  </section>
+
+  <!-- end-of-view prev/next -->
+  <div class="endnav"><button id="prev2"><span class="lbl">← Previous</span><div class="ttl" id="prev2t"></div></button><button class="next" id="next2"><span class="lbl">Next →</span><div class="ttl" id="next2t"></div></button></div>
+
+</div></main>
+
 <script>
-  // highlight current section in sidebar
-  const links=[...document.querySelectorAll('.sidebar nav a')];
-  const map={};links.forEach(l=>{const id=l.getAttribute('href').slice(1);const s=document.getElementById(id);if(s)map[id]=l;});
-  const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.style.background='');const a=map[e.target.id];if(a){a.style.background='rgba(255,255,255,.12)';a.style.color='#fff';}}})},{rootMargin:'-10% 0px -80% 0px'});
-  Object.values(map).forEach(()=>{});
-  document.querySelectorAll('section[id]').forEach(s=>obs.observe(s));
-  // close mobile menu on link click
-  document.querySelector('.sidebar nav').addEventListener('click',e=>{if(e.target.tagName==='A')document.querySelector('.sidebar').classList.remove('open');});
+  const nav = document.getElementById('nav');
+  const btns = [...nav.querySelectorAll('button[data-v]')];
+  const order = btns.map(b => b.dataset.v);
+  const labelOf = v => btns.find(b => b.dataset.v === v).textContent.trim();
+  const views = {}; document.querySelectorAll('.view').forEach(s => views[s.id] = s);
+
+  function show(v, push){
+    if(!views[v]) v = 'start';
+    Object.values(views).forEach(s => s.classList.remove('active'));
+    views[v].classList.add('active');
+    btns.forEach(b => b.classList.toggle('active', b.dataset.v === v));
+    document.getElementById('crumb-now').textContent = labelOf(v);
+    const i = order.indexOf(v);
+    const prev = order[i-1], next = order[i+1];
+    // topbar buttons
+    const P = document.getElementById('prev'), N = document.getElementById('next');
+    P.disabled = !prev; N.disabled = !next;
+    P.onclick = () => prev && show(prev, true); N.onclick = () => next && show(next, true);
+    // end-of-view buttons
+    const P2 = document.getElementById('prev2'), N2 = document.getElementById('next2');
+    P2.disabled = !prev; N2.disabled = !next;
+    document.getElementById('prev2t').textContent = prev ? labelOf(prev) : '';
+    document.getElementById('next2t').textContent = next ? labelOf(next) : '';
+    P2.onclick = () => prev && show(prev, true); N2.onclick = () => next && show(next, true);
+    window.scrollTo(0,0);
+    document.querySelector('.content').scrollTop = 0;
+    if(push) history.replaceState(null,'','#'+v);
+    document.querySelector('.sidebar').classList.remove('open');
+  }
+  nav.addEventListener('click', e => { const b = e.target.closest('button[data-v]'); if(b) show(b.dataset.v, true); });
+  document.querySelectorAll('[data-go]').forEach(el => el.addEventListener('click', () => show(el.dataset.go, true)));
+  show((location.hash||'').replace('#','') || 'start', false);
 </script>
 </body>
 </html>
